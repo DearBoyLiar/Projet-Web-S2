@@ -4,5 +4,5 @@ CREATE OR REPLACE PROCEDURE inscription(ppseudo  UTILISATEUR.PSEUDO%TYPE , ppass
     VALUES (ppseudo,ppassword,SYSDATE);
   EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN
-      RAISE_APPLICATION_ERROR(-20001,'Ce compte existe dÈj‡ !');
+      RAISE_APPLICATION_ERROR(-20001,'Ce compte existe d√©j√† !');
   END;
