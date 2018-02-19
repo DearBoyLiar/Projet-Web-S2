@@ -1,0 +1,192 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+
+
+
+html, body {
+	font-family:"Roboto", "Arial", sans-serif;
+	background-color: #ecf0f1;
+	margin:0;
+	padding:0;
+}
+
+.wrapper {
+	width:80%;
+	margin-left:auto; margin-right:auto;
+}
+
+
+/* HEADER */
+
+header {
+	box-shadow: 2px black;
+    -moz-box-shadow: 12px 3px 12px 0px #9b9b9b; 
+    -webkit-box-shadow: 12px 3px 12px 0px #9b9b9b;
+    -o-box-shadow: 12px 3px 12px 0px #9b9b9b;
+    box-shadow: 12px 3px 12px 0px #9b9b9b;
+    color: white;
+	top:0px;
+	background-color:#3498db;
+	height:60px;
+	width:100%;
+}
+
+header img {
+	height:50px;
+	padding:5px;
+}
+
+#nomuser {
+	position: absolute;
+	right: 20px;
+	top : 15px;
+	font-size: 18px;
+}
+
+#nomuser img {
+	width:24px;
+	height: 24px;
+	vertical-align: middle;
+	margin-left:4px;
+}
+
+/* PAGE QUIZZ */
+
+
+.bloc_question, .accueil {
+	background-color: white;
+    -moz-box-shadow: 0px 0px 10px 0px #cfcfcf;
+    -webkit-box-shadow: 0px 0px 10px 0px #cfcfcf;
+     -o-box-shadow: 0px 0px 10px 0px #cfcfcf;
+    box-shadow: 0px 0px 10px 0px #cfcfcf;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#cfcfcf, Direction=NaN, Strength=10);
+	
+	margin-bottom:20px;
+	padding:10px 10px 10px 10px;
+}
+
+.titre-quest {
+	font-weight: 600;
+}
+
+/* PAGE D'ACCUEIL */
+
+.accueil {
+	background-color:white;
+	width:500px;
+	margin-left:auto; margin-right:auto;
+	text-align:left;
+	margin-top:20vh;
+}
+
+.accueil h1 {
+	text-align: center;
+}
+
+select {
+	width:100%;
+	margin: 0 0 15px;
+	padding: 10px;
+}
+
+.accueil input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.accueil button {
+  margin-top:10px;
+  text-transform: uppercase;
+  outline: 0;
+  background: #3498db;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.accueil select {
+	background-color:#f2f2f2;
+	border:none;
+}
+
+.accueil button:hover, button:active,.form button:focus {
+  background: #3498db;
+}
+
+.accueil .login-form a {
+	display: block;
+	margin-top:10px;
+}
+
+.inscription {
+	margin-top:10vh;
+}
+
+
+#btn_valider {
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#3498db;
+	border-radius:50px;
+	text-align:center;
+	border: none;
+	box-shadow: 2px 2px 3px #999;
+}
+
+/*
+ * PAGE RESULTAT
+ */
+#lescore {
+	text-align: center;
+	font-size: 96px;
+	color: #3498db;
+}
+
+.classement {
+	margin-top:20px;
+}
+
+.classement_global > table, .classement_global td, .classement_global th{
+	border-collapse: collapse;
+	border:1px solid #3498db;
+	background-color: white;
+	text-align: center;
+}
+
+table {
+	width:100%;
+}
+
+.par_origine > table {
+	border: none;
+}
+
+.par_origine table td {
+	valign:top;
+}
+
+.origine, .origine td, .origine th {
+	border-collapse: collapse;
+	border:1px solid #3498db;
+	background-color: white;
+	text-align: center;
+}
+
+/*
+ * INSCRIPTION
+ */
+.msg-erreur {
+	color:red;
+}
