@@ -4,9 +4,9 @@
     <root id="1"/>
     <schema id="2" parent="1" name="ZZW2090A">
       <ObjectId>378</ObjectId>
-      <IntrospectionTimestamp>2018-02-08.18:23:29</IntrospectionTimestamp>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-08.17:45:31</ModifiedTimestamp>
+      <IntrospectionTimestamp>2018-02-19.10:51:16</IntrospectionTimestamp>
+      <CreatedTimestamp>2018-02-12.09:43:28</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -3781,215 +3781,935 @@
     <schema id="1259" parent="1" name="XS$NULL">
       <ObjectId>2147483638</ObjectId>
     </schema>
-    <table id="1260" parent="2" name="CLIENT">
-      <ObjectId>209104</ObjectId>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
+    <schema id="1260" parent="1" name="CBG6541A">
+      <ObjectId>1363</ObjectId>
+    </schema>
+    <schema id="1261" parent="1" name="KRM1927A">
+      <ObjectId>1364</ObjectId>
+    </schema>
+    <schema id="1262" parent="1" name="BDM1626A">
+      <ObjectId>1365</ObjectId>
+    </schema>
+    <schema id="1263" parent="1" name="DWV0240A">
+      <ObjectId>1366</ObjectId>
+    </schema>
+    <schema id="1264" parent="1" name="DJH0644A">
+      <ObjectId>1367</ObjectId>
+    </schema>
+    <schema id="1265" parent="1" name="FZS0668A">
+      <ObjectId>1368</ObjectId>
+    </schema>
+    <schema id="1266" parent="1" name="DHR1399A">
+      <ObjectId>1369</ObjectId>
+    </schema>
+    <schema id="1267" parent="1" name="GHN0779A">
+      <ObjectId>1370</ObjectId>
+    </schema>
+    <schema id="1268" parent="1" name="GHB0997A">
+      <ObjectId>1371</ObjectId>
+    </schema>
+    <schema id="1269" parent="1" name="KHM1298A">
+      <ObjectId>1372</ObjectId>
+    </schema>
+    <schema id="1270" parent="1" name="LFW1317A">
+      <ObjectId>1373</ObjectId>
+    </schema>
+    <schema id="1271" parent="1" name="SDH0122A">
+      <ObjectId>1374</ObjectId>
+    </schema>
+    <schema id="1272" parent="1" name="BCG2687A">
+      <ObjectId>1375</ObjectId>
+    </schema>
+    <schema id="1273" parent="1" name="BCR2694A">
+      <ObjectId>1376</ObjectId>
+    </schema>
+    <schema id="1274" parent="1" name="BCS1068A">
+      <ObjectId>1377</ObjectId>
+    </schema>
+    <schema id="1275" parent="1" name="BDF2487A">
+      <ObjectId>1378</ObjectId>
+    </schema>
+    <schema id="1276" parent="1" name="BDN2967A">
+      <ObjectId>1379</ObjectId>
+    </schema>
+    <schema id="1277" parent="1" name="BDS2888A">
+      <ObjectId>1380</ObjectId>
+    </schema>
+    <schema id="1278" parent="1" name="BLD2482A">
+      <ObjectId>1381</ObjectId>
+    </schema>
+    <schema id="1279" parent="1" name="BLF2748A">
+      <ObjectId>1382</ObjectId>
+    </schema>
+    <schema id="1280" parent="1" name="BLK3215A">
+      <ObjectId>1383</ObjectId>
+    </schema>
+    <schema id="1281" parent="1" name="BLN2933A">
+      <ObjectId>1384</ObjectId>
+    </schema>
+    <schema id="1282" parent="1" name="BNV2621A">
+      <ObjectId>1385</ObjectId>
+    </schema>
+    <schema id="1283" parent="1" name="BNV3036A">
+      <ObjectId>1386</ObjectId>
+    </schema>
+    <schema id="1284" parent="1" name="BQN3083A">
+      <ObjectId>1387</ObjectId>
+    </schema>
+    <schema id="1285" parent="1" name="BRC2598A">
+      <ObjectId>1388</ObjectId>
+    </schema>
+    <schema id="1286" parent="1" name="BRF2590A">
+      <ObjectId>1389</ObjectId>
+    </schema>
+    <schema id="1287" parent="1" name="BRH2356A">
+      <ObjectId>1390</ObjectId>
+    </schema>
+    <schema id="1288" parent="1" name="BRM2662A">
+      <ObjectId>1391</ObjectId>
+    </schema>
+    <schema id="1289" parent="1" name="BRM2935B">
+      <ObjectId>1392</ObjectId>
+    </schema>
+    <schema id="1290" parent="1" name="BRS2505A">
+      <ObjectId>1393</ObjectId>
+    </schema>
+    <schema id="1291" parent="1" name="BRT2654A">
+      <ObjectId>1394</ObjectId>
+    </schema>
+    <schema id="1292" parent="1" name="BRV2570A">
+      <ObjectId>1395</ObjectId>
+    </schema>
+    <schema id="1293" parent="1" name="BSN2927A">
+      <ObjectId>1396</ObjectId>
+    </schema>
+    <schema id="1294" parent="1" name="BTL2770A">
+      <ObjectId>1397</ObjectId>
+    </schema>
+    <schema id="1295" parent="1" name="CBL2369A">
+      <ObjectId>1398</ObjectId>
+    </schema>
+    <schema id="1296" parent="1" name="CLL2102A">
+      <ObjectId>1399</ObjectId>
+    </schema>
+    <schema id="1297" parent="1" name="CLL2686A">
+      <ObjectId>1400</ObjectId>
+    </schema>
+    <schema id="1298" parent="1" name="CNC2899A">
+      <ObjectId>1401</ObjectId>
+    </schema>
+    <schema id="1299" parent="1" name="CNJ3031A">
+      <ObjectId>1402</ObjectId>
+    </schema>
+    <schema id="1300" parent="1" name="CNR3027A">
+      <ObjectId>1403</ObjectId>
+    </schema>
+    <schema id="1301" parent="1" name="CRL3024A">
+      <ObjectId>1404</ObjectId>
+    </schema>
+    <schema id="1302" parent="1" name="CRL3069A">
+      <ObjectId>1405</ObjectId>
+    </schema>
+    <schema id="1303" parent="1" name="CRM2360B">
+      <ObjectId>1406</ObjectId>
+    </schema>
+    <schema id="1304" parent="1" name="CRN2465A">
+      <ObjectId>1407</ObjectId>
+    </schema>
+    <schema id="1305" parent="1" name="CRS1881A">
+      <ObjectId>1408</ObjectId>
+    </schema>
+    <schema id="1306" parent="1" name="CRT2682A">
+      <ObjectId>1409</ObjectId>
+    </schema>
+    <schema id="1307" parent="1" name="CRV2789A">
+      <ObjectId>1410</ObjectId>
+    </schema>
+    <schema id="1308" parent="1" name="CTM2369A">
+      <ObjectId>1411</ObjectId>
+    </schema>
+    <schema id="1309" parent="1" name="CVK2875A">
+      <ObjectId>1412</ObjectId>
+    </schema>
+    <schema id="1310" parent="1" name="DBL2948A">
+      <ObjectId>1413</ObjectId>
+    </schema>
+    <schema id="1311" parent="1" name="DCC2190A">
+      <ObjectId>1414</ObjectId>
+    </schema>
+    <schema id="1312" parent="1" name="DHJ1983A">
+      <ObjectId>1415</ObjectId>
+    </schema>
+    <schema id="1313" parent="1" name="DLJ3042A">
+      <ObjectId>1416</ObjectId>
+    </schema>
+    <schema id="1314" parent="1" name="DRB1756A">
+      <ObjectId>1417</ObjectId>
+    </schema>
+    <schema id="1315" parent="1" name="DRJ2440A">
+      <ObjectId>1418</ObjectId>
+    </schema>
+    <schema id="1316" parent="1" name="DRL3264A">
+      <ObjectId>1419</ObjectId>
+    </schema>
+    <schema id="1317" parent="1" name="DRN2872A">
+      <ObjectId>1420</ObjectId>
+    </schema>
+    <schema id="1318" parent="1" name="DSV2787A">
+      <ObjectId>1421</ObjectId>
+    </schema>
+    <schema id="1319" parent="1" name="FBM2976A">
+      <ObjectId>1422</ObjectId>
+    </schema>
+    <schema id="1320" parent="1" name="FNR3038A">
+      <ObjectId>1423</ObjectId>
+    </schema>
+    <schema id="1321" parent="1" name="FRJ3025A">
+      <ObjectId>1424</ObjectId>
+    </schema>
+    <schema id="1322" parent="1" name="FRM2721A">
+      <ObjectId>1425</ObjectId>
+    </schema>
+    <schema id="1323" parent="1" name="FRS1398A">
+      <ObjectId>1426</ObjectId>
+    </schema>
+    <schema id="1324" parent="1" name="FRT2744A">
+      <ObjectId>1427</ObjectId>
+    </schema>
+    <schema id="1325" parent="1" name="GBF2582A">
+      <ObjectId>1428</ObjectId>
+    </schema>
+    <schema id="1326" parent="1" name="GCQ2025A">
+      <ObjectId>1429</ObjectId>
+    </schema>
+    <schema id="1327" parent="1" name="GDL2692A">
+      <ObjectId>1430</ObjectId>
+    </schema>
+    <schema id="1328" parent="1" name="GLL2770A">
+      <ObjectId>1431</ObjectId>
+    </schema>
+    <schema id="1329" parent="1" name="GLM2870A">
+      <ObjectId>1432</ObjectId>
+    </schema>
+    <schema id="1330" parent="1" name="GLS2882A">
+      <ObjectId>1433</ObjectId>
+    </schema>
+    <schema id="1331" parent="1" name="GND2838A">
+      <ObjectId>1434</ObjectId>
+    </schema>
+    <schema id="1332" parent="1" name="GNL1722A">
+      <ObjectId>1435</ObjectId>
+    </schema>
+    <schema id="1333" parent="1" name="GRG3043A">
+      <ObjectId>1436</ObjectId>
+    </schema>
+    <schema id="1334" parent="1" name="GRL2822B">
+      <ObjectId>1437</ObjectId>
+    </schema>
+    <schema id="1335" parent="1" name="GRL3010A">
+      <ObjectId>1438</ObjectId>
+    </schema>
+    <schema id="1336" parent="1" name="GRM2810A">
+      <ObjectId>1439</ObjectId>
+    </schema>
+    <schema id="1337" parent="1" name="GSM1870A">
+      <ObjectId>1440</ObjectId>
+    </schema>
+    <schema id="1338" parent="1" name="GTC2342A">
+      <ObjectId>1441</ObjectId>
+    </schema>
+    <schema id="1339" parent="1" name="HCR2850A">
+      <ObjectId>1442</ObjectId>
+    </schema>
+    <schema id="1340" parent="1" name="HLL2891A">
+      <ObjectId>1443</ObjectId>
+    </schema>
+    <schema id="1341" parent="1" name="HPW2746A">
+      <ObjectId>1444</ObjectId>
+    </schema>
+    <schema id="1342" parent="1" name="HRN3411A">
+      <ObjectId>1445</ObjectId>
+    </schema>
+    <schema id="1343" parent="1" name="HTG2852A">
+      <ObjectId>1446</ObjectId>
+    </schema>
+    <schema id="1344" parent="1" name="JCV2919A">
+      <ObjectId>1447</ObjectId>
+    </schema>
+    <schema id="1345" parent="1" name="JNC3035A">
+      <ObjectId>1448</ObjectId>
+    </schema>
+    <schema id="1346" parent="1" name="JRJ2014A">
+      <ObjectId>1449</ObjectId>
+    </schema>
+    <schema id="1347" parent="1" name="KBV3020A">
+      <ObjectId>1450</ObjectId>
+    </schema>
+    <schema id="1348" parent="1" name="KDS2445A">
+      <ObjectId>1451</ObjectId>
+    </schema>
+    <schema id="1349" parent="1" name="KFW2753A">
+      <ObjectId>1452</ObjectId>
+    </schema>
+    <schema id="1350" parent="1" name="KHM2502A">
+      <ObjectId>1453</ObjectId>
+    </schema>
+    <schema id="1351" parent="1" name="KML2784A">
+      <ObjectId>1454</ObjectId>
+    </schema>
+    <schema id="1352" parent="1" name="KNJ2783A">
+      <ObjectId>1455</ObjectId>
+    </schema>
+    <schema id="1353" parent="1" name="LCJ2150A">
+      <ObjectId>1456</ObjectId>
+    </schema>
+    <schema id="1354" parent="1" name="LCN2608A">
+      <ObjectId>1457</ObjectId>
+    </schema>
+    <schema id="1355" parent="1" name="LFR2806A">
+      <ObjectId>1458</ObjectId>
+    </schema>
+    <schema id="1356" parent="1" name="LHN3042A">
+      <ObjectId>1459</ObjectId>
+    </schema>
+    <schema id="1357" parent="1" name="LLG2909A">
+      <ObjectId>1460</ObjectId>
+    </schema>
+    <schema id="1358" parent="1" name="LMJ2290A">
+      <ObjectId>1461</ObjectId>
+    </schema>
+    <schema id="1359" parent="1" name="LMR2600A">
+      <ObjectId>1462</ObjectId>
+    </schema>
+    <schema id="1360" parent="1" name="LMT2286A">
+      <ObjectId>1463</ObjectId>
+    </schema>
+    <schema id="1361" parent="1" name="LMT2842A">
+      <ObjectId>1464</ObjectId>
+    </schema>
+    <schema id="1362" parent="1" name="LNN2502A">
+      <ObjectId>1465</ObjectId>
+    </schema>
+    <schema id="1363" parent="1" name="LPL3026A">
+      <ObjectId>1466</ObjectId>
+    </schema>
+    <schema id="1364" parent="1" name="LRC2583A">
+      <ObjectId>1467</ObjectId>
+    </schema>
+    <schema id="1365" parent="1" name="LRC2716A">
+      <ObjectId>1468</ObjectId>
+    </schema>
+    <schema id="1366" parent="1" name="LSM2780A">
+      <ObjectId>1469</ObjectId>
+    </schema>
+    <schema id="1367" parent="1" name="LTJ2874A">
+      <ObjectId>1470</ObjectId>
+    </schema>
+    <schema id="1368" parent="1" name="LVN2843A">
+      <ObjectId>1471</ObjectId>
+    </schema>
+    <schema id="1369" parent="1" name="LWR2466A">
+      <ObjectId>1472</ObjectId>
+    </schema>
+    <schema id="1370" parent="1" name="LWX2298A">
+      <ObjectId>1473</ObjectId>
+    </schema>
+    <schema id="1371" parent="1" name="MDM2603A">
+      <ObjectId>1474</ObjectId>
+    </schema>
+    <schema id="1372" parent="1" name="MDT2874A">
+      <ObjectId>1475</ObjectId>
+    </schema>
+    <schema id="1373" parent="1" name="MLC3297A">
+      <ObjectId>1476</ObjectId>
+    </schema>
+    <schema id="1374" parent="1" name="MLM1633A">
+      <ObjectId>1477</ObjectId>
+    </schema>
+    <schema id="1375" parent="1" name="MNK2567A">
+      <ObjectId>1478</ObjectId>
+    </schema>
+    <schema id="1376" parent="1" name="MNL2750A">
+      <ObjectId>1479</ObjectId>
+    </schema>
+    <schema id="1377" parent="1" name="MNM2788A">
+      <ObjectId>1480</ObjectId>
+    </schema>
+    <schema id="1378" parent="1" name="MNP2711A">
+      <ObjectId>1481</ObjectId>
+    </schema>
+    <schema id="1379" parent="1" name="MNR2767A">
+      <ObjectId>1482</ObjectId>
+    </schema>
+    <schema id="1380" parent="1" name="MNR2778A">
+      <ObjectId>1483</ObjectId>
+    </schema>
+    <schema id="1381" parent="1" name="MRH2986A">
+      <ObjectId>1484</ObjectId>
+    </schema>
+    <schema id="1382" parent="1" name="MRL3044A">
+      <ObjectId>1485</ObjectId>
+    </schema>
+    <schema id="1383" parent="1" name="MRN2980A">
+      <ObjectId>1486</ObjectId>
+    </schema>
+    <schema id="1384" parent="1" name="MRR2833A">
+      <ObjectId>1487</ObjectId>
+    </schema>
+    <schema id="1385" parent="1" name="MRR3046A">
+      <ObjectId>1488</ObjectId>
+    </schema>
+    <schema id="1386" parent="1" name="MSR2563A">
+      <ObjectId>1489</ObjectId>
+    </schema>
+    <schema id="1387" parent="1" name="MZN2980A">
+      <ObjectId>1490</ObjectId>
+    </schema>
+    <schema id="1388" parent="1" name="NCT3017A">
+      <ObjectId>1491</ObjectId>
+    </schema>
+    <schema id="1389" parent="1" name="NDN2130A">
+      <ObjectId>1492</ObjectId>
+    </schema>
+    <schema id="1390" parent="1" name="NGC2077A">
+      <ObjectId>1493</ObjectId>
+    </schema>
+    <schema id="1391" parent="1" name="NGK2873A">
+      <ObjectId>1494</ObjectId>
+    </schema>
+    <schema id="1392" parent="1" name="NGT2207A">
+      <ObjectId>1495</ObjectId>
+    </schema>
+    <schema id="1393" parent="1" name="NNW2798A">
+      <ObjectId>1496</ObjectId>
+    </schema>
+    <schema id="1394" parent="1" name="NRS2783A">
+      <ObjectId>1497</ObjectId>
+    </schema>
+    <schema id="1395" parent="1" name="NWJ2195A">
+      <ObjectId>1498</ObjectId>
+    </schema>
+    <schema id="1396" parent="1" name="PRL3133A">
+      <ObjectId>1499</ObjectId>
+    </schema>
+    <schema id="1397" parent="1" name="PRQ3248A">
+      <ObjectId>1500</ObjectId>
+    </schema>
+    <schema id="1398" parent="1" name="PRR2474A">
+      <ObjectId>1501</ObjectId>
+    </schema>
+    <schema id="1399" parent="1" name="PSS2886A">
+      <ObjectId>1502</ObjectId>
+    </schema>
+    <schema id="1400" parent="1" name="PTF2783A">
+      <ObjectId>1503</ObjectId>
+    </schema>
+    <schema id="1401" parent="1" name="PTG2815A">
+      <ObjectId>1504</ObjectId>
+    </schema>
+    <schema id="1402" parent="1" name="PWG1962A">
+      <ObjectId>1505</ObjectId>
+    </schema>
+    <schema id="1403" parent="1" name="QDB2931A">
+      <ObjectId>1506</ObjectId>
+    </schema>
+    <schema id="1404" parent="1" name="QMT3171A">
+      <ObjectId>1507</ObjectId>
+    </schema>
+    <schema id="1405" parent="1" name="RCL2495A">
+      <ObjectId>1508</ObjectId>
+    </schema>
+    <schema id="1406" parent="1" name="RGS2962A">
+      <ObjectId>1509</ObjectId>
+    </schema>
+    <schema id="1407" parent="1" name="RGT2320A">
+      <ObjectId>1510</ObjectId>
+    </schema>
+    <schema id="1408" parent="1" name="RNB0412A">
+      <ObjectId>1511</ObjectId>
+    </schema>
+    <schema id="1409" parent="1" name="RRT3023A">
+      <ObjectId>1512</ObjectId>
+    </schema>
+    <schema id="1410" parent="1" name="RSJ1655A">
+      <ObjectId>1513</ObjectId>
+    </schema>
+    <schema id="1411" parent="1" name="RTN2945A">
+      <ObjectId>1514</ObjectId>
+    </schema>
+    <schema id="1412" parent="1" name="RVN2437A">
+      <ObjectId>1515</ObjectId>
+    </schema>
+    <schema id="1413" parent="1" name="RZL2721A">
+      <ObjectId>1516</ObjectId>
+    </schema>
+    <schema id="1414" parent="1" name="SBB2754A">
+      <ObjectId>1517</ObjectId>
+    </schema>
+    <schema id="1415" parent="1" name="SCT2584A">
+      <ObjectId>1518</ObjectId>
+    </schema>
+    <schema id="1416" parent="1" name="SCT2951A">
+      <ObjectId>1519</ObjectId>
+    </schema>
+    <schema id="1417" parent="1" name="SLC2108A">
+      <ObjectId>1520</ObjectId>
+    </schema>
+    <schema id="1418" parent="1" name="SLF2972A">
+      <ObjectId>1521</ObjectId>
+    </schema>
+    <schema id="1419" parent="1" name="SLG3038A">
+      <ObjectId>1522</ObjectId>
+    </schema>
+    <schema id="1420" parent="1" name="SLM2698A">
+      <ObjectId>1523</ObjectId>
+    </schema>
+    <schema id="1421" parent="1" name="SLN2926A">
+      <ObjectId>1524</ObjectId>
+    </schema>
+    <schema id="1422" parent="1" name="SNH2731A">
+      <ObjectId>1525</ObjectId>
+    </schema>
+    <schema id="1423" parent="1" name="SNM2981A">
+      <ObjectId>1526</ObjectId>
+    </schema>
+    <schema id="1424" parent="1" name="SSN3215A">
+      <ObjectId>1527</ObjectId>
+    </schema>
+    <schema id="1425" parent="1" name="SVC2897A">
+      <ObjectId>1528</ObjectId>
+    </schema>
+    <schema id="1426" parent="1" name="SVL3048A">
+      <ObjectId>1529</ObjectId>
+    </schema>
+    <schema id="1427" parent="1" name="SVR2645A">
+      <ObjectId>1530</ObjectId>
+    </schema>
+    <schema id="1428" parent="1" name="TCN3037A">
+      <ObjectId>1531</ObjectId>
+    </schema>
+    <schema id="1429" parent="1" name="THN2725A">
+      <ObjectId>1532</ObjectId>
+    </schema>
+    <schema id="1430" parent="1" name="TKT2661A">
+      <ObjectId>1533</ObjectId>
+    </schema>
+    <schema id="1431" parent="1" name="TNF2089A">
+      <ObjectId>1534</ObjectId>
+    </schema>
+    <schema id="1432" parent="1" name="TNN2773A">
+      <ObjectId>1535</ObjectId>
+    </schema>
+    <schema id="1433" parent="1" name="TRF3311A">
+      <ObjectId>1536</ObjectId>
+    </schema>
+    <schema id="1434" parent="1" name="TRL2792A">
+      <ObjectId>1537</ObjectId>
+    </schema>
+    <schema id="1435" parent="1" name="TRS3028A">
+      <ObjectId>1538</ObjectId>
+    </schema>
+    <schema id="1436" parent="1" name="TSM2939A">
+      <ObjectId>1539</ObjectId>
+    </schema>
+    <schema id="1437" parent="1" name="TTS2330A">
+      <ObjectId>1540</ObjectId>
+    </schema>
+    <schema id="1438" parent="1" name="VLM2835A">
+      <ObjectId>1541</ObjectId>
+    </schema>
+    <schema id="1439" parent="1" name="VRC2452A">
+      <ObjectId>1542</ObjectId>
+    </schema>
+    <schema id="1440" parent="1" name="VRN2716A">
+      <ObjectId>1543</ObjectId>
+    </schema>
+    <schema id="1441" parent="1" name="VRP1997A">
+      <ObjectId>1544</ObjectId>
+    </schema>
+    <schema id="1442" parent="1" name="WMS2802A">
+      <ObjectId>1545</ObjectId>
+    </schema>
+    <schema id="1443" parent="1" name="WNL1963A">
+      <ObjectId>1546</ObjectId>
+    </schema>
+    <schema id="1444" parent="1" name="ZHS2034A">
+      <ObjectId>1547</ObjectId>
+    </schema>
+    <schema id="1445" parent="1" name="ZLF3017A">
+      <ObjectId>1548</ObjectId>
+    </schema>
+    <sequence id="1446" parent="2" name="SEQ_COLLECTION_ID_COLLECTION">
+      <ObjectId>216500</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:13</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="1447" parent="2" name="SEQ_LOGO_ID_LOGO">
+      <ObjectId>216499</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:13</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="1448" parent="2" name="SEQ_PARTIE_ID_PARTIE">
+      <ObjectId>216498</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:13</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="1449" parent="2" name="COLLECTION">
+      <ObjectId>216492</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="1261" parent="2" name="COMMANDE">
-      <ObjectId>209106</ObjectId>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
+    <table id="1450" parent="2" name="LOGO">
+      <ObjectId>216489</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="1262" parent="2" name="DETAIL">
-      <ObjectId>209108</ObjectId>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
+    <table id="1451" parent="2" name="NIVEAU">
+      <ObjectId>216494</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="1263" parent="2" name="PRODUIT">
-      <ObjectId>209102</ObjectId>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
+    <table id="1452" parent="2" name="PARTIE">
+      <ObjectId>216487</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="1264" parent="2" name="UTILISATEUR">
-      <ObjectId>212499</ObjectId>
-      <CreatedTimestamp>2018-02-08.17:45:31</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-08.17:45:31</ModifiedTimestamp>
+    <table id="1453" parent="2" name="REPOND">
+      <ObjectId>216496</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <column id="1265" parent="1260" name="IDC">
+    <table id="1454" parent="2" name="UTILISATEUR">
+      <ObjectId>216485</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <routine id="1455" parent="2" name="INSCRIPTION">
+      <ObjectId>213503</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <Invalid>1</Invalid>
+      <CreatedTimestamp>2018-02-12.09:43:28</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-12.09:43:28</ModifiedTimestamp>
+    </routine>
+    <column id="1456" parent="1449" name="ID_COLLECTION">
       <Position>1</Position>
       <DataType>NUMBER(*)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1266" parent="1260" name="NOMC">
-      <Position>2</Position>
-      <DataType>VARCHAR2(50)|0</DataType>
-    </column>
-    <column id="1267" parent="1260" name="PRENOMC">
-      <Position>3</Position>
-      <DataType>VARCHAR2(50)|0</DataType>
-    </column>
-    <index id="1268" parent="1260" name="PK_CLIENT">
-      <ObjectId>209105</ObjectId>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
+    <index id="1457" parent="1449" name="COLLECTION_PK">
+      <ObjectId>216493</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
-      <ColNames>IDC</ColNames>
+      <ColNames>ID_COLLECTION</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1269" parent="1260" name="PK_CLIENT">
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <ColNames>IDC</ColNames>
+    <key id="1458" parent="1449" name="COLLECTION_PK">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>ID_COLLECTION</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>PK_CLIENT</UnderlyingIndexName>
+      <UnderlyingIndexName>COLLECTION_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="1270" parent="1261" name="IDCO">
+    <trigger id="1459" parent="1449" name="COLLECTION_ID_COLLECTION">
+      <ObjectId>216503</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:13</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <Events>I</Events>
+      <Turn>before-row</Turn>
+      <Condition>NEW.id_collection IS NULL</Condition>
+    </trigger>
+    <column id="1460" parent="1450" name="ID_LOGO">
       <Position>1</Position>
       <DataType>NUMBER(*)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1271" parent="1261" name="DATEC">
+    <column id="1461" parent="1450" name="LIEN_LOGO">
       <Position>2</Position>
-      <DataType>DATE|0</DataType>
-    </column>
-    <column id="1272" parent="1261" name="IDC">
-      <Position>3</Position>
-      <DataType>NUMBER(*)|0</DataType>
-    </column>
-    <index id="1273" parent="1261" name="PK_COMMANDE">
-      <ObjectId>209107</ObjectId>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <TablespaceName>USERS</TablespaceName>
-      <ColNames>IDCO</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="1274" parent="1261" name="PK_COMMANDE">
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <ColNames>IDCO</ColNames>
-      <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>PK_COMMANDE</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="1275" parent="1261" name="FK_COMMANDE_CLIENT">
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <ColNames>IDC</ColNames>
-      <RefSchemaName>ZZW2090A</RefSchemaName>
-      <RefTableName>CLIENT</RefTableName>
-      <RefKeyName>PK_CLIENT</RefKeyName>
-      <OnDelete>restrict</OnDelete>
-    </foreign-key>
-    <check id="1276" parent="1261" name="NN_IDC">
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <ColNames>IDC</ColNames>
-      <Predicate>idc is not null</Predicate>
-    </check>
-    <column id="1277" parent="1262" name="IDCO">
-      <Position>1</Position>
-      <DataType>NUMBER(*)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="1278" parent="1262" name="IDP">
-      <Position>2</Position>
-      <DataType>NUMBER(*)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="1279" parent="1262" name="NOMBRE">
-      <Position>3</Position>
-      <DataType>NUMBER(*)|0</DataType>
-    </column>
-    <index id="1280" parent="1262" name="PK_DETAIL">
-      <ObjectId>209109</ObjectId>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <TablespaceName>USERS</TablespaceName>
-      <ColNames>IDCO
-IDP</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="1281" parent="1262" name="PK_DETAIL">
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <ColNames>IDCO
-IDP</ColNames>
-      <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>PK_DETAIL</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="1282" parent="1262" name="FK_DETAIL_COMMANDE">
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <ColNames>IDCO</ColNames>
-      <RefSchemaName>ZZW2090A</RefSchemaName>
-      <RefTableName>COMMANDE</RefTableName>
-      <RefKeyName>PK_COMMANDE</RefKeyName>
-      <OnDelete>restrict</OnDelete>
-    </foreign-key>
-    <foreign-key id="1283" parent="1262" name="FK_DETAIL_PRODUIT">
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <ColNames>IDP</ColNames>
-      <RefSchemaName>ZZW2090A</RefSchemaName>
-      <RefTableName>PRODUIT</RefTableName>
-      <RefKeyName>PK_PRODUIT</RefKeyName>
-      <OnDelete>restrict</OnDelete>
-    </foreign-key>
-    <column id="1284" parent="1263" name="IDP">
-      <Position>1</Position>
-      <DataType>NUMBER(*)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="1285" parent="1263" name="NOMP">
-      <Position>2</Position>
-      <DataType>VARCHAR2(50)|0</DataType>
-    </column>
-    <column id="1286" parent="1263" name="PRIXP">
-      <Position>3</Position>
-      <DataType>NUMBER(5,2)|0</DataType>
-    </column>
-    <index id="1287" parent="1263" name="PK_PRODUIT">
-      <ObjectId>209103</ObjectId>
-      <CreatedTimestamp>2018-01-31.20:15:02</CreatedTimestamp>
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <TablespaceName>USERS</TablespaceName>
-      <ColNames>IDP</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="1288" parent="1263" name="PK_PRODUIT">
-      <ModifiedTimestamp>2018-01-31.20:15:02</ModifiedTimestamp>
-      <ColNames>IDP</ColNames>
-      <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>PK_PRODUIT</UnderlyingIndexName>
-      <Primary>1</Primary>
-    </key>
-    <column id="1289" parent="1264" name="PSEUDO">
-      <Position>1</Position>
       <DataType>VARCHAR2(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1290" parent="1264" name="MOT_DE_PASSE">
-      <Position>2</Position>
-      <DataType>VARCHAR2(255)|0</DataType>
+    <column id="1462" parent="1450" name="RARETE_LOGO">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1291" parent="1264" name="DATE_INSCRIPTION">
-      <Position>3</Position>
-      <DataType>DATE|0</DataType>
-    </column>
-    <column id="1292" parent="1264" name="EXPERIENCE">
+    <column id="1463" parent="1450" name="REPONSE">
       <Position>4</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1464" parent="1450" name="ID_COLLECTION">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+    </column>
+    <index id="1465" parent="1450" name="LOGO_PK">
+      <ObjectId>216490</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID_LOGO</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="1466" parent="1450" name="LOGO_UNIQ">
+      <ObjectId>216491</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>LIEN_LOGO
+REPONSE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="1467" parent="1450" name="LOGO_PK">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>ID_LOGO</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>LOGO_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="1468" parent="1450" name="LOGO_UNIQ">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>LIEN_LOGO
+REPONSE</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>LOGO_UNIQ</UnderlyingIndexName>
+    </key>
+    <foreign-key id="1469" parent="1450" name="SYS_C0077616">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>ID_COLLECTION</ColNames>
+      <RefSchemaName>ZZW2090A</RefSchemaName>
+      <RefTableName>COLLECTION</RefTableName>
+      <RefKeyName>COLLECTION_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <trigger id="1470" parent="1450" name="LOGO_ID_LOGO">
+      <ObjectId>216502</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:13</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <Events>I</Events>
+      <Turn>before-row</Turn>
+      <Condition>NEW.id_logo IS NULL</Condition>
+    </trigger>
+    <column id="1471" parent="1451" name="NIVEAU">
+      <Position>1</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1472" parent="1451" name="NB_LOGO_GAGNE">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+    </column>
+    <column id="1473" parent="1451" name="ID_COLLECTION">
+      <Position>3</Position>
+      <DataType>NUMBER(10)|0</DataType>
+    </column>
+    <index id="1474" parent="1451" name="NIVEAU_PK">
+      <ObjectId>216495</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>NIVEAU</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="1475" parent="1451" name="NIVEAU_PK">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>NIVEAU</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>NIVEAU_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="1476" parent="1451" name="SYS_C0077617">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <ColNames>ID_COLLECTION</ColNames>
+      <RefSchemaName>ZZW2090A</RefSchemaName>
+      <RefTableName>COLLECTION</RefTableName>
+      <RefKeyName>COLLECTION_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="1477" parent="1452" name="ID_PARTIE">
+      <Position>1</Position>
       <DataType>NUMBER(*)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1293" parent="1264" name="SYS_C0074560">
-      <ObjectId>212500</ObjectId>
+    <column id="1478" parent="1452" name="TEMPS">
+      <Position>2</Position>
+      <DataType>NUMBER(10)|0</DataType>
+    </column>
+    <column id="1479" parent="1452" name="RESULTAT_PARTIE">
+      <Position>3</Position>
+      <DataType>NUMBER(1)|0</DataType>
+    </column>
+    <column id="1480" parent="1452" name="DATE_PARTIE">
+      <Position>4</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="1481" parent="1452" name="PSEUDO">
+      <Position>5</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1482" parent="1452" name="NIVEAU">
+      <Position>6</Position>
+      <DataType>NUMBER(10)|0</DataType>
+    </column>
+    <index id="1483" parent="1452" name="PARTIE_PK">
+      <ObjectId>216488</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID_PARTIE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="1484" parent="1452" name="PARTIE_PK">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>ID_PARTIE</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>PARTIE_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="1485" parent="1452" name="SYS_C0077614">
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-08.17:45:31</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-08.17:45:31</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>PSEUDO</ColNames>
+      <RefSchemaName>ZZW2090A</RefSchemaName>
+      <RefTableName>UTILISATEUR</RefTableName>
+      <RefKeyName>UTILISATEUR_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1486" parent="1452" name="SYS_C0077615">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>NIVEAU</ColNames>
+      <RefSchemaName>ZZW2090A</RefSchemaName>
+      <RefTableName>NIVEAU</RefTableName>
+      <RefKeyName>NIVEAU_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <check id="1487" parent="1452" name="CK_BOOLEAN_RESULTAT_PARTIE">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>RESULTAT_PARTIE</ColNames>
+      <Predicate>resultat_partie IN (0,1)</Predicate>
+    </check>
+    <trigger id="1488" parent="1452" name="PARTIE_ID_PARTIE">
+      <ObjectId>216501</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:13</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <Events>I</Events>
+      <Turn>before-row</Turn>
+      <Condition>NEW.id_partie IS NULL</Condition>
+    </trigger>
+    <column id="1489" parent="1453" name="RESULTAT_REPONSE">
+      <Position>1</Position>
+      <DataType>NUMBER(1)|0</DataType>
+    </column>
+    <column id="1490" parent="1453" name="DATE_REPONSE">
+      <Position>2</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="1491" parent="1453" name="REPONSE_REPONDU">
+      <Position>3</Position>
+      <DataType>VARCHAR2(25)|0</DataType>
+    </column>
+    <column id="1492" parent="1453" name="ID_LOGO">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1493" parent="1453" name="ID_PARTIE">
+      <Position>5</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="1494" parent="1453" name="REPOND_PK">
+      <ObjectId>216497</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <ColNames>ID_LOGO
+ID_PARTIE</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="1495" parent="1453" name="REPOND_PK">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>ID_LOGO
+ID_PARTIE</ColNames>
+      <InitiallyDeferred>1</InitiallyDeferred>
+      <UnderlyingIndexName>REPOND_PK</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="1496" parent="1453" name="SYS_C0077618">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <ColNames>ID_LOGO</ColNames>
+      <RefSchemaName>ZZW2090A</RefSchemaName>
+      <RefTableName>LOGO</RefTableName>
+      <RefKeyName>LOGO_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="1497" parent="1453" name="SYS_C0077619">
+      <NameSurrogate>1</NameSurrogate>
+      <ModifiedTimestamp>2018-02-19.10:51:13</ModifiedTimestamp>
+      <ColNames>ID_PARTIE</ColNames>
+      <RefSchemaName>ZZW2090A</RefSchemaName>
+      <RefTableName>PARTIE</RefTableName>
+      <RefKeyName>PARTIE_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <check id="1498" parent="1453" name="CK_BOOLEAN_RESULTAT_REPONSE">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
+      <ColNames>RESULTAT_REPONSE</ColNames>
+      <Predicate>resultat_reponse IN (0,1)</Predicate>
+    </check>
+    <column id="1499" parent="1454" name="PSEUDO">
+      <Position>1</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1500" parent="1454" name="MOT_DE_PASSE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="1501" parent="1454" name="DATE_INSCRIPTION">
+      <Position>3</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="1502" parent="1454" name="EXPERIENCE">
+      <Position>4</Position>
+      <DataType>NUMBER(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="1503" parent="1454" name="UTILISATEUR_PK">
+      <ObjectId>216486</ObjectId>
+      <CreatedTimestamp>2018-02-19.10:51:12</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
       <ColNames>PSEUDO</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1294" parent="1264" name="SYS_C0074560">
-      <NameSurrogate>1</NameSurrogate>
-      <ModifiedTimestamp>2018-02-08.17:45:31</ModifiedTimestamp>
+    <key id="1504" parent="1454" name="UTILISATEUR_PK">
+      <ModifiedTimestamp>2018-02-19.10:51:12</ModifiedTimestamp>
       <ColNames>PSEUDO</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
-      <UnderlyingIndexName>SYS_C0074560</UnderlyingIndexName>
+      <UnderlyingIndexName>UTILISATEUR_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
+    <argument id="1505" parent="1455" name="PPSEUDO">
+      <DataType>VARCHAR2|0</DataType>
+    </argument>
+    <argument id="1506" parent="1455" name="PPASSWORD">
+      <DataType>VARCHAR2|0</DataType>
+    </argument>
   </database-model>
 </dataSource>
