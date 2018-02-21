@@ -9,7 +9,7 @@ function connexion($pseudo,$password,$connexion)
         $query = "begin connexion(:pseudo,:password); end;";
 
         // Hashage du mot de passe avant ajout dans la BD
-        //$password = hash("sha256",$password);
+        $password = hash("sha256",$password);
 
         // Prépare la requête
         $stid = oci_parse($connexion, $query);
@@ -17,7 +17,7 @@ function connexion($pseudo,$password,$connexion)
 
         // On lie les marqueurs avec les variables
         oci_bind_by_name($stid, ':pseudo', $pseudo);
-        oci_bind_by_name($stid, ':password', $true_password);
+        oci_bind_by_name($stid, ':password', $true_password,255);
 
         // Execution de la requête et récupération d'un message d'erreur si erreur
         if ( ! oci_execute($stid)){
