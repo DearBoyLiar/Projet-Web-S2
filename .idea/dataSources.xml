@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@telline.univ-tlse3.fr" uuid="0b122aa6-2080-499c-b12e-703779ec2b6b">
+    <data-source source="LOCAL" name="@telline.univ-tlse3.fr" uuid="52ae12ee-8600-42bf-9646-864ebc0ed49a">
       <driver-ref>oracle</driver-ref>
       <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
       <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
       <jdbc-url>jdbc:oracle:thin:@telline.univ-tlse3.fr:1521:etupre</jdbc-url>
       <driver-properties>

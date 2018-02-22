@@ -13,13 +13,6 @@
 
 <script type="text/javascript" src='../../js/jquery-3.1.1.min.js'></script>
 <script type="text/javascript" src='../../js/jquery-ui-1.12.1/jquery-ui.js'></script>
-<script>
-    $(function(){
-        $("#datepicker").datepicker({
-            dateFormat: 'dd/mm/yy'
-        });
-    });
-</script>
 
 <?php include ('header.php');?>
 

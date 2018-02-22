@@ -27,14 +27,19 @@ function inscrire($pseudo,$password,$confirmed_password,$connexion)
         oci_bind_by_name($stid, ':password', $password);
 
         // Execution de la requête et récupération d'un message d'erreur si erreur
-        if (!oci_execute($stid)) {
-            $e = oci_error($stid);
-            return $e['message'];
+        if ( ! oci_execute($stid) ){
+            oci_close($connexion);
+            echo "<h2>Un compte avec ce pseudo existe déjà, merci d'en choisir un autre</h2>".'<br />';
+            return false;
+        } else {
+            oci_close($connexion);
+            echo  "<h2>Bienvenue dans le jeu du Quizz des Logos ! </h2>".'<br />';
+            return true;
         }
-        oci_close($connexion);
-        return "Bienvenue dans le jeu du Quizz des Logos ! ";
+
     } else {
-        return "Le pseudo doit comporter au moins 5 caractères et les champs mots de passe doivent se correspondre";
+        include ('../../vue/inscription_vue.php');
+        return  "Le pseudo doit comporter au moins 5 caractères et les champs mots de passe doivent se correspondre";
     }
 }
 
