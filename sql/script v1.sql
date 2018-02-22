@@ -9,8 +9,8 @@
 CREATE TABLE utilisateur(
 	pseudo            VARCHAR2 (255) NOT NULL  ,
 	mot_de_passe      VARCHAR2 (255) NOT NULL  ,
-	date_inscription  DATE   ,
-	experience        NUMBER(10,0)  NOT NULL  ,
+	date_inscription  DATE   NOT NULL,
+	experience        NUMBER(10,0),
 	CONSTRAINT utilisateur_pk PRIMARY KEY (pseudo)
 );
 
@@ -24,6 +24,7 @@ CREATE TABLE partie(
 	date_partie      DATE   ,
 	pseudo           VARCHAR2 (255) NOT NULL  ,
 	niveau           NUMBER(10,0)   ,
+	statut           CHAR(1) NOT NULL ,
 	CONSTRAINT partie_pk PRIMARY KEY (id_partie) ,
 	CONSTRAINT ck_boolean_resultat_partie CHECK (resultat_partie IN (0,1))
 );
@@ -34,9 +35,8 @@ CREATE TABLE partie(
 CREATE TABLE logo(
 	id_logo        NUMBER NOT NULL ,
 	lien_logo      VARCHAR2 (255)NOT NULL  ,
-	rarete_logo    NUMBER(10,0)  NOT NULL  ,
 	reponse        VARCHAR2 (255)NOT NULL  ,
-	id_collection  NUMBER(10,0)   ,
+	id_collection  NUMBER(10,0)  NOT NULL,
 	CONSTRAINT logo_pk PRIMARY KEY (id_logo) ,
 	CONSTRAINT logo_uniq UNIQUE (lien_logo,reponse)
 );
