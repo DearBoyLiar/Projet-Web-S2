@@ -3,8 +3,8 @@
 $dbHost = "telline.univ-tlse3.fr";
 $dbHostPort="1521";
 $dbServiceName = "etupre";
-$usr = "bzl2037a";
-$pswd = "Techno2503";
+$usr = "";
+$pswd = "";
 $dbConnStr = "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)
         (HOST=".$dbHost.")(PORT=".$dbHostPort."))
         (CONNECT_DATA=(SERVICE_NAME=".$dbServiceName.")))";
