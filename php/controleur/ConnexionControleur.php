@@ -17,7 +17,7 @@ include ('../modele/GestionJoueur/ConnexionModele.php');
 // Récupère le message renvoyer par la fonction inscrire de la classe InscriptionModele
 if(connexion($_POST['pseudo'],$_POST['password'],$dbConn))
 {
-    echo "stub";
+    echo "<a href='../vue/choix_niveau.php'><h3>Page du choix du niveau</h3></a>";;
 } else {
     echo "<a href='../vue/accueil.php'><h3>Retourner à l'accueil</h3></a>";
 }
