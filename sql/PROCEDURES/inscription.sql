@@ -1,8 +1,15 @@
 CREATE OR REPLACE PROCEDURE inscription(ppseudo  utilisateur.PSEUDO%TYPE , ppassword utilisateur.MOT_DE_PASSE%TYPE) IS
+  ecode NUMBER;
+  errm VARCHAR(20);
   BEGIN
     INSERT INTO UTILISATEUR(PSEUDO, MOT_DE_PASSE,DATE_INSCRIPTION,EXPERIENCE)
     VALUES (ppseudo,ppassword,SYSDATE,1);
+
     EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN
     RAISE_APPLICATION_ERROR(-20001,'Ce compte existe déjà !');
+    WHEN OTHERS THEN
+    ecode := SQLCODE;
+    errm :=SQLERRM;
+    RAISE_APPLICATION_ERROR(ecode,errm);
   END;

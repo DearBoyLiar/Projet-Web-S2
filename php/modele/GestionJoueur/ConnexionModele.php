@@ -31,6 +31,9 @@ function connexion($pseudo,$password,$connexion)
             oci_close($connexion);
             if ($password == $true_password) {
                 // Si le mot de passe BD correspond à celui renseigné alors il est connecté
+                // session_start
+                session_start();
+                $_SESSION['pseudo'] = $pseudo;
                 echo  "<h2>Vous êtes connecté !</h2>".'<br />';
                 return true;
             } else {

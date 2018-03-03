@@ -28,7 +28,7 @@
 					// affichage du module de connexion
 					include "connexion_vue.php";
 				} else {   // utilisateur connecté => doit choisir un quizz
-					
+                    include "choix_niveau.php";
 				}
 			?>
 		</div>

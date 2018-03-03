@@ -20,13 +20,12 @@ CREATE TABLE utilisateur(
 CREATE TABLE partie(
 	id_partie        NUMBER NOT NULL ,
 	temps            NUMBER(10,0)   ,
-	resultat_partie  NUMBER (1) ,
 	date_partie      DATE   ,
 	pseudo           VARCHAR2 (255) NOT NULL  ,
 	niveau           NUMBER(10,0)   ,
-	statut           CHAR(1) NOT NULL ,
-	CONSTRAINT partie_pk PRIMARY KEY (id_partie) ,
-	CONSTRAINT ck_boolean_resultat_partie CHECK (resultat_partie IN (0,1))
+	statut           VARCHAR(2) NOT NULL ,
+	CONSTRAINT partie_pk PRIMARY KEY (id_partie),
+	CONSTRAINT partie_ck_statut CHECK(statut IN('EC','G','P'))
 );
 
 ------------------------------------------------------------
