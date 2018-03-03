@@ -16,7 +16,7 @@ function getExperience($pseudo,$connexion) {
     oci_bind_by_name($stid, ':experience', $experience);
 
     if ( ! oci_execute($stid)){
-        // En cas de soucie sur la requête qui ne s'exécute mal
+        // En cas de soucie sur la requête qui s'exécute mal
         oci_close($connexion);
         $e = oci_error($stid);
         echo $e['message'];
@@ -44,7 +44,7 @@ function getNiveau($connexion) {
     } else {
         $tab_niveaux = array();
         while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
-            array_push($tab_niveaux,$row['NIVEAU']);
+            array_push($tab_niveaux,$row);
         }
         oci_free_statement($_SESSION['niveaux']);
         oci_close($connexion);

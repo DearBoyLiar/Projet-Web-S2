@@ -74,12 +74,12 @@ CREATE TABLE repond(
 
 
 
-ALTER TABLE partie ADD FOREIGN KEY (pseudo) REFERENCES utilisateur(pseudo);
-ALTER TABLE partie ADD FOREIGN KEY (niveau) REFERENCES niveau(niveau);
-ALTER TABLE logo ADD FOREIGN KEY (id_collection) REFERENCES collection(id_collection);
-ALTER TABLE niveau ADD FOREIGN KEY (id_collection) REFERENCES collection(id_collection);
-ALTER TABLE repond ADD FOREIGN KEY (id_logo) REFERENCES logo(id_logo);
-ALTER TABLE repond ADD FOREIGN KEY (id_partie) REFERENCES partie(id_partie);
+ALTER TABLE partie ADD CONSTRAINT fk_partie_pseudo FOREIGN KEY (pseudo) REFERENCES utilisateur(pseudo);
+ALTER TABLE partie ADD CONSTRAINT fk_partie_niveau FOREIGN KEY (niveau) REFERENCES niveau(niveau);
+ALTER TABLE logo ADD CONSTRAINT fk_logo_collection FOREIGN KEY (id_collection) REFERENCES collection(id_collection);
+ALTER TABLE niveau ADD CONSTRAINT fk_niveau_collection FOREIGN KEY (id_collection) REFERENCES collection(id_collection);
+ALTER TABLE repond ADD CONSTRAINT fk_repond_logo FOREIGN KEY (id_logo) REFERENCES logo(id_logo);
+ALTER TABLE repond ADD CONSTRAINT fk_repond_partie FOREIGN KEY (id_partie) REFERENCES partie(id_partie);
 
 CREATE SEQUENCE seq_partie_id_partie START WITH 1 INCREMENT BY 1 NOCYCLE;
 CREATE SEQUENCE seq_logo_id_logo START WITH 1 INCREMENT BY 1 NOCYCLE;

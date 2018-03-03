@@ -21,7 +21,7 @@ function connexion($pseudo,$password,$connexion)
 
         // Execution de la requête et récupération d'un message d'erreur si erreur
         if ( ! oci_execute($stid)){
-            // En cas de soucie sur la requête qui ne s'exécute mal
+            // En cas de soucie sur la requête qui s'exécute mal
             oci_close($connexion);
             $e = oci_error($stid);
             echo $e['message'];

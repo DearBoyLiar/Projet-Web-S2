@@ -8,9 +8,7 @@
 	
 	<body>
 		<?php
-			session_start();
-            include "header.php";
-			// Connexion si la variable $_POST contient un pseudo et mdp
+        include ('header.php');
 			if (isset($_POST) && !empty($_POST['pseudo'])) {
 					//if  si le compte existe =>pseudo et mdp alors on ajoute dans la variable session pseudo $_SESSION
 					$_SESSION['pseudo'] = $_POST['pseudo'];

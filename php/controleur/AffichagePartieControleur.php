@@ -14,5 +14,10 @@ session_start();
 include ('../modele/GestionBD/GestionBD.php');
 include ('../modele/GestionJeu/PartieModele.php');
 
-// $_SESSION['niveau_choisi'] = $_POST['niveau'] => correspond au niveau choisi par l'utilisateur;
-$_SESSION['niveau_choisi'] = $_POST['niveau'];
+// $_POST['niveau'] => correspond au niveau choisi par l'utilisateur;
+var_dump($_POST['niveau']['NIVEAU']);
+// Création de la partie pour le niveau choisi
+//creer_partie($_SESSION['niveau_choisi'],$_SESSION['pseudo'],$dbConn);
+
+
+

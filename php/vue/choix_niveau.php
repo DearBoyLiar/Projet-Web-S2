@@ -17,9 +17,11 @@ session_start();
 <script type="text/javascript" src='../../js/jquery-3.1.1.min.js'></script>
 <script type="text/javascript" src='../../js/jquery-ui-1.12.1/jquery-ui.js'></script>
 
+<?php include ('header.php');?>
+
 <div  class="accueil">
     <form method="post" action="../controleur/ChoixNiveauControleur.php">
-        <button>Choisissez votre niveau</button>
+        <button>Choisir votre niveau</button>
     </form>
 </div>
 </body>

@@ -10,7 +10,6 @@
 </header>
 <body>
 <?php
-
 include ('../modele/GestionBD/GestionBD.php');
 include ('../modele/GestionJeu/ChoixNiveauModele.php');
 include ('../vue/affichage_niveau.php');
