@@ -13,7 +13,7 @@
 session_start();
 include ('../modele/GestionBD/GestionBD.php');
 include ('../modele/GestionJeu/ResultatModele.php');
-include ('../vue/affiche_resultat.php');
+//include ('../vue/affiche_resultat.php');
 
 // $_SESSION['logos'], $_POST ['ID_LOGO'], $_SESSION['id_partie']
 
@@ -22,19 +22,12 @@ include ('../vue/affiche_resultat.php');
 
 // afficher le résultat
 
-//
-$id_collection = creer_partie(intval($_POST['niveau']),$_SESSION['pseudo'],$dbConn);
 
-if (isset($id_collection)) {
-    if (recup_logo($id_collection,$dbConn)) {
-        // Affichage des logos
-        afficheLogo($_SESSION['logos']);
-    }
-} else {
-    echo "<h2>Ce niveau n'est pas accessible, vous n'avez pas l'experience requise</h2>".'<br />';
-    echo "<a href='../vue/choix_niveau.php'><h3>Retourner à la page de choix de niveau</h3></a>";
-
+foreach($_SESSION['logos'] as $logo) {
+    $resultat_reponse = $_POST[$logo['ID_LOGO']] == $logo['REPONSE'] ? 1 : 0;
+    echo inserer_repond($resultat_reponse,$_POST[$logo['ID_LOGO']],intval($logo['ID_LOGO']),intval($_SESSION['id_partie']),$dbConn);
 }
+?>
 
 
 

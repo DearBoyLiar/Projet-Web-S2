@@ -30,7 +30,7 @@ CREATE OR REPLACE PROCEDURE creer_partie(pniveau IN partie.NIVEAU%TYPE,ppseudo I
 
     SELECT ID_COLLECTION INTO vid_collection FROM NIVEAU WHERE NIVEAU=pniveau;
 
-    pid_partie = vid_partie;
+    pid_partie := vid_partie;
     pid_collection := vid_collection;
 
     EXCEPTION

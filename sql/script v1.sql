@@ -64,7 +64,7 @@ CREATE TABLE niveau(
 CREATE TABLE repond(
 	resultat_reponse  NUMBER (1) ,
 	date_reponse      DATE   ,
-	reponse_repondu   VARCHAR2 (25)  ,
+	reponse_repondue   VARCHAR2 (25)  ,
 	id_logo           NUMBER(10,0)  NOT NULL  ,
 	id_partie         NUMBER(10,0)  NOT NULL  ,
 	CONSTRAINT repond_Pk PRIMARY KEY (id_logo,id_partie) ,

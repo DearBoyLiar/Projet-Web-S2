@@ -3,6 +3,7 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/sql/PROCEDURES/connexion.sql" dialect="OracleSqlPlus" />
     <file url="file://$PROJECT_DIR$/sql/PROCEDURES/creer_partie.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/sql/PROCEDURES/creer_repond.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sql/PROCEDURES/inscription.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sql/TRIGGERS/trigger_niveau.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sql/script v1.sql" dialect="OracleSqlPlus" />

@@ -13,12 +13,11 @@ function creer_partie($niveau,$pseudo,$connexion) {
     oci_bind_by_name($stid, ':id_partie', $id_partie,255);
 
     if ( ! oci_execute($stid)){
-        $e = oci_error($stid);
-        echo $e['message'];        // Si le trigger sur l'expérience ne passe pas
+        // Si le trigger sur l'expérience ne passe pas
         return NULL;
     }
     oci_close($connexion);
-    $_SESSION['partie'] = $id_partie; // récupération de l'id_partie
+    $_SESSION['id_partie'] = $id_partie; // récupération de l'id_partie
     return $id_collection;
 }
 

@@ -8,6 +8,7 @@ function afficheLogo($tab)
     echo "<form method='post' action='../controleur/AffichageResultatControleur.php'>";
     echo "<h1>Répondez aux questions, bon courage !</h1>";
     $tab = trieLogo($tab);
+    $_SESSION['logos'] = $tab; // Récupère en session les logos choisis
     foreach ($tab as $logo) {
         echo "<table>";
         // renvoie l'id_collection pour ce niveau lors du choix du niveau
