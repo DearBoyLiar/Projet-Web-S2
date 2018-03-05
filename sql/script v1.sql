@@ -86,24 +86,3 @@ CREATE SEQUENCE seq_logo_id_logo START WITH 1 INCREMENT BY 1 NOCYCLE;
 CREATE SEQUENCE seq_collection_id_collection START WITH 1 INCREMENT BY 1 NOCYCLE;
 
 
-CREATE OR REPLACE TRIGGER partie_id_partie
-	BEFORE INSERT ON partie 
-  FOR EACH ROW 
-	WHEN (NEW.id_partie IS NULL) 
-	BEGIN
-		 select seq_partie_id_partie.NEXTVAL INTO :NEW.id_partie from DUAL; 
-	END;
-CREATE OR REPLACE TRIGGER logo_id_logo
-	BEFORE INSERT ON logo 
-  FOR EACH ROW 
-	WHEN (NEW.id_logo IS NULL) 
-	BEGIN
-		 select seq_logo_id_logo.NEXTVAL INTO :NEW.id_logo from DUAL; 
-	END;
-CREATE OR REPLACE TRIGGER collection_id_collection
-	BEFORE INSERT ON collection 
-  FOR EACH ROW 
-	WHEN (NEW.id_collection IS NULL) 
-	BEGIN
-		 select seq_collection_id_collection.NEXTVAL INTO :NEW.id_collection from DUAL; 
-	END;

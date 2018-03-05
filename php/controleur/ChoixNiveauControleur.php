@@ -14,18 +14,12 @@ include ('../modele/GestionBD/GestionBD.php');
 include ('../modele/GestionJeu/ChoixNiveauModele.php');
 include ('../vue/affichage_niveau.php');
 
-// récupère le niveau d'expérience du joueur connecté
-if(getExperience($_SESSION['pseudo'],$dbConn))
-{
-    // On récupère tout les niveaux
-    if(getNiveau($dbConn)) {
-        // Affiche les niveaux en fonction ede l'expérience de l'utilisateur
-        afficheNiveau($_SESSION['niveaux']);
-    } else {
-        echo 'non';
-    }
+// On récupère tout les niveaux
+if(getNiveau($dbConn)) {
+    // Affiche les niveaux en fonction ede l'expérience de l'utilisateur
+    afficheNiveau($_SESSION['niveaux']);
 } else {
-    echo 'non';
+    echo 'On ne peut récupérer les niveaux, merci de réessayer ultérieurement';
 }
 ?>
 

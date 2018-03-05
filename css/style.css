@@ -146,6 +146,12 @@ select {
 	margin-top:10vh;
 }
 
+img {
+	width:250px; /* you can use % */
+	height: 200px;
+	text-align: center;
+}
+
 
 #btn_valider {
 	position:fixed;
