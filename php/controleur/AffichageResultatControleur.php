@@ -24,6 +24,10 @@ include ('../vue/affichage_resultat.php');
 // variable du score de l'utilisateur, initialisée à 0
 $score = 0;
 
+
+/**
+ * TROUVER SOLUTION POUR ACTUALISATION DE PAGE
+ */
 foreach($_SESSION['logos'] as $logo) {
 
     // pour chaque logo, comparatif réponse donnée et la vrai réponse
