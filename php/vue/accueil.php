@@ -12,12 +12,7 @@
 			if (isset($_POST) && !empty($_POST['pseudo'])) {
 					//if  si le compte existe =>pseudo et mdp alors on ajoute dans la variable session pseudo $_SESSION
 					$_SESSION['pseudo'] = $_POST['pseudo'];
-					/*} else {
-						// avertissement si les données de connexions sont incorrectes
-						echo "<script>alert('La connexion a échoué, veuillez re-essayer')</script>";
-					}*/
 			}
-
 		?>
 		<div class="wrapper">
 			<?php
@@ -26,7 +21,7 @@
 					// affichage du module de connexion
 					include "connexion_vue.php";
 				} else {   // utilisateur connecté => doit choisir un quizz
-                    include "choix_niveau.php";
+                    include "menu.php";
 				}
 			?>
 		</div>

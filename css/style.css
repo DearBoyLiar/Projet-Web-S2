@@ -146,12 +146,15 @@ select {
 	margin-top:10vh;
 }
 
-img {
-	width:250px; /* you can use % */
+.logo {
+	width:250px;
 	height: 200px;
-	text-align: center;
 }
 
+.icone {
+	width:90px; /* you can use % */
+	height: 80px;
+}
 
 #btn_valider {
 	position:fixed;
@@ -179,10 +182,17 @@ img {
 	margin-top:20px;
 }
 
-.classement_global > table, .classement_global td, .classement_global th{
+.classement > table, .classement td {
 	border-collapse: collapse;
 	border:1px solid #3498db;
 	background-color: white;
+	text-align: center;
+}
+
+.classement th {
+	border-collapse: collapse;
+	border:1px solid #3498db;
+	background-color: #3498db;
 	text-align: center;
 }
 

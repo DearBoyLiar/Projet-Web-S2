@@ -23,8 +23,8 @@ CREATE OR REPLACE PROCEDURE creer_partie(pniveau IN partie.NIVEAU%TYPE,ppseudo I
       vtemps := 150;
     END IF;
 
-    INSERT INTO PARTIE(ID_PARTIE,TEMPS,DATE_PARTIE,PSEUDO,NIVEAU,STATUT)
-    VALUES (SEQ_PARTIE_ID_PARTIE.nextval,vtemps,SYSDATE,ppseudo,pniveau,'EC');
+    INSERT INTO PARTIE(ID_PARTIE,TEMPS,DATE_PARTIE,PSEUDO,NIVEAU,STATUT,SCORE)
+    VALUES (SEQ_PARTIE_ID_PARTIE.nextval,vtemps,CURRENT_TIMESTAMP,ppseudo,pniveau,'EC',0);
 
     SELECT MAX(ID_PARTIE) INTO vid_partie FROM PARTIE;
 
@@ -33,6 +33,7 @@ CREATE OR REPLACE PROCEDURE creer_partie(pniveau IN partie.NIVEAU%TYPE,ppseudo I
     pid_partie := vid_partie;
     pid_collection := vid_collection;
 
+    COMMIT;
     EXCEPTION
     WHEN NO_DATA_FOUND  THEN
     RAISE_APPLICATION_ERROR(-20010,'Ce niveau n''est pas présent dans la BD');
@@ -50,4 +51,4 @@ CREATE OR REPLACE PROCEDURE creer_partie(pniveau IN partie.NIVEAU%TYPE,ppseudo I
     ecode := SQLCODE;
     errm :=SQLERRM;
     RAISE_APPLICATION_ERROR(ecode,errm);
-  END;
+  END creer_partie;

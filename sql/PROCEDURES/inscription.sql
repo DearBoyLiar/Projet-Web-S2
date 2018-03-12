@@ -3,7 +3,9 @@ CREATE OR REPLACE PROCEDURE inscription(ppseudo  utilisateur.PSEUDO%TYPE , ppass
   errm VARCHAR(20);
   BEGIN
     INSERT INTO UTILISATEUR(PSEUDO, MOT_DE_PASSE,DATE_INSCRIPTION,EXPERIENCE)
-    VALUES (ppseudo,ppassword,SYSDATE,1);
+    VALUES (ppseudo,ppassword,CURRENT_TIMESTAMP,1);
+
+    COMMIT;
 
     EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN
@@ -12,4 +14,4 @@ CREATE OR REPLACE PROCEDURE inscription(ppseudo  utilisateur.PSEUDO%TYPE , ppass
     ecode := SQLCODE;
     errm :=SQLERRM;
     RAISE_APPLICATION_ERROR(ecode,errm);
-  END;
+  END inscription;

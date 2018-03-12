@@ -24,6 +24,7 @@ CREATE TABLE partie(
 	pseudo           VARCHAR2 (255) NOT NULL  ,
 	niveau           NUMBER(10,0)   ,
 	statut           VARCHAR(2) NOT NULL ,
+	score           NUMBER(10,0)   ,
 	CONSTRAINT partie_pk PRIMARY KEY (id_partie),
 	CONSTRAINT partie_ck_statut CHECK(statut IN('EC','G','P'))
 );

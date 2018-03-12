@@ -9,8 +9,9 @@ CREATE OR REPLACE PROCEDURE creer_repond(presultat_reponse IN REPOND.RESULTAT_RE
   BEGIN
 
     INSERT INTO REPOND(ID_LOGO,ID_PARTIE,DATE_REPONSE,RESULTAT_REPONSE,REPONSE_REPONDUE)
-    VALUES (pid_logo,pid_partie,SYSDATE,presultat_reponse,preponse_repondue);
+    VALUES (pid_logo,pid_partie,CURRENT_TIMESTAMP,presultat_reponse,preponse_repondue);
 
+    COMMIT;
     EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN
     RAISE_APPLICATION_ERROR(-20011,'Vous avez déjà répondu dans cette partie à cette question ! ');
@@ -26,4 +27,4 @@ CREATE OR REPLACE PROCEDURE creer_repond(presultat_reponse IN REPOND.RESULTAT_RE
     ecode := SQLCODE;
     errm :=SQLERRM;
     RAISE_APPLICATION_ERROR(ecode,errm);
-  END;
+  END creer_repond;

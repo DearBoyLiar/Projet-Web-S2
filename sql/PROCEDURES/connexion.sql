@@ -12,4 +12,4 @@ CREATE OR REPLACE PROCEDURE connexion(ppseudo IN UTILISATEUR.PSEUDO%TYPE,
     ecode := SQLCODE;
     errm :=SQLERRM;
     RAISE_APPLICATION_ERROR(ecode,errm);
-  END;
+  END connexion;

@@ -30,6 +30,11 @@ function afficheLogo($tab)
     echo "</div>";
 }
 
+/**
+ * Permet de récupérer que 10 questions en les mélangant
+ * @param $tab
+ * @return array
+ */
 function trieLogo($tab){
     $array = array();
     shuffle($tab);

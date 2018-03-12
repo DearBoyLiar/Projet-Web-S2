@@ -15,6 +15,7 @@
 <script type="text/javascript" src='../../js/jquery-ui-1.12.1/jquery-ui.js'></script>
 
 <?php
+session_start();
 if (isset($_SESSION['pseudo'])) {
     session_destroy();
     include ('header.php');

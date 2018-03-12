@@ -7,85 +7,87 @@ drop table collection;
 
 drop procedure connexion;
 drop procedure inscription;
-drop procedure recup_experience;
 drop procedure creer_partie;
+drop procedure creer_repond;
+drop procedure update_partie;
 
 drop sequence SEQ_COLLECTION_ID_COLLECTION;
 drop sequence SEQ_LOGO_ID_LOGO;
 drop sequence SEQ_PARTIE_ID_PARTIE;
 
 
- ---------------------------------------------------------------
- --        Script Oracle.
- ---------------------------------------------------------------
+---------------------------------------------------------------
+--        Script Oracle.
+---------------------------------------------------------------
 
 
 ------------------------------------------------------------
 -- Table: Utilisateur
 ------------------------------------------------------------
 CREATE TABLE utilisateur(
-	pseudo            VARCHAR2 (255) NOT NULL  ,
-	mot_de_passe      VARCHAR2 (255) NOT NULL  ,
-	date_inscription  DATE   NOT NULL,
-	experience        NUMBER(10,0),
-	CONSTRAINT utilisateur_pk PRIMARY KEY (pseudo)
+  pseudo            VARCHAR2 (255) NOT NULL  ,
+  mot_de_passe      VARCHAR2 (255) NOT NULL  ,
+  date_inscription  DATE   NOT NULL,
+  experience        NUMBER(10,0),
+  CONSTRAINT utilisateur_pk PRIMARY KEY (pseudo)
 );
 
 ------------------------------------------------------------
 -- Table: Partie
 ------------------------------------------------------------
 CREATE TABLE partie(
-	id_partie        NUMBER NOT NULL ,
-	temps            NUMBER(10,0)   ,
-	date_partie      DATE   ,
-	pseudo           VARCHAR2 (255) NOT NULL  ,
-	niveau           NUMBER(10,0)   ,
-	statut           VARCHAR(2) NOT NULL ,
-	CONSTRAINT partie_pk PRIMARY KEY (id_partie),
-	CONSTRAINT partie_ck_statut CHECK(statut IN('EC','G','P'))
+  id_partie        NUMBER NOT NULL ,
+  temps            NUMBER(10,0)   ,
+  date_partie      DATE   ,
+  pseudo           VARCHAR2 (255) NOT NULL  ,
+  niveau           NUMBER(10,0)   ,
+  statut           VARCHAR(2) NOT NULL ,
+  score           NUMBER(10,0)   ,
+  CONSTRAINT partie_pk PRIMARY KEY (id_partie),
+  CONSTRAINT partie_ck_statut CHECK(statut IN('EC','G','P'))
 );
 
 ------------------------------------------------------------
 -- Table: Logo
 ------------------------------------------------------------
 CREATE TABLE logo(
-	id_logo        NUMBER NOT NULL ,
-	lien_logo      VARCHAR2 (255)NOT NULL  ,
-	reponse        VARCHAR2 (255)NOT NULL  ,
-	id_collection  NUMBER(10,0)  NOT NULL,
-	CONSTRAINT logo_pk PRIMARY KEY (id_logo) ,
-	CONSTRAINT logo_uniq UNIQUE (lien_logo,reponse)
+  id_logo        NUMBER NOT NULL ,
+  lien_logo      VARCHAR2 (255)NOT NULL  ,
+  reponse        VARCHAR2 (255)NOT NULL  ,
+  id_collection  NUMBER(10,0)  NOT NULL,
+  CONSTRAINT logo_pk PRIMARY KEY (id_logo) ,
+  CONSTRAINT logo_uniq UNIQUE (lien_logo,reponse)
 );
 
 ------------------------------------------------------------
 -- Table: Collection
 ------------------------------------------------------------
 CREATE TABLE collection(
-	id_collection  NUMBER NOT NULL ,
-	CONSTRAINT collection_Pk PRIMARY KEY (id_collection)
+  id_collection  NUMBER NOT NULL ,
+  CONSTRAINT collection_Pk PRIMARY KEY (id_collection)
 );
 
 ------------------------------------------------------------
 -- Table: Niveau
 ------------------------------------------------------------
 CREATE TABLE niveau(
-	niveau         NUMBER(10,0)  NOT NULL  ,
-	nb_logo_gagne  NUMBER(10,0)   ,
-	id_collection  NUMBER(10,0)   ,
-	CONSTRAINT niveau_pk PRIMARY KEY (niveau)
+  niveau         NUMBER(10,0)  NOT NULL  ,
+  nb_logo_gagne  NUMBER(10,0)   ,
+  id_collection  NUMBER(10,0)   ,
+  CONSTRAINT niveau_pk PRIMARY KEY (niveau)
 );
 
 ------------------------------------------------------------
 -- Table: Repond
 ------------------------------------------------------------
 CREATE TABLE repond(
-	resultat_reponse  NUMBER (1) ,
-	date_reponse      DATE   ,
-	reponse_repondue   VARCHAR2 (25)  ,
-	id_logo           NUMBER(10,0)  NOT NULL  ,
-	id_partie         NUMBER(10,0)  NOT NULL  ,
-	CONSTRAINT repond_Pk PRIMARY KEY (id_logo,id_partie) ,
-	CONSTRAINT ck_boolean_resultat_reponse CHECK (resultat_reponse IN (0,1))
+  resultat_reponse  NUMBER (1) ,
+  date_reponse      DATE   ,
+  reponse_repondue   VARCHAR2 (25)  ,
+  id_logo           NUMBER(10,0)  NOT NULL  ,
+  id_partie         NUMBER(10,0)  NOT NULL  ,
+  CONSTRAINT repond_Pk PRIMARY KEY (id_logo,id_partie) ,
+  CONSTRAINT ck_boolean_resultat_reponse CHECK (resultat_reponse IN (0,1))
 );
 
 
@@ -226,8 +228,6 @@ INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_I
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'http://logok.org/wp-content/uploads/2014/08/Unilever-logo-880x660.png','UNILEVER',4);
 --Row 50
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'https://s-media-cache-ak0.pinimg.com/originals/cf/6c/07/cf6c0722698268a7a2b0548d6431d70b.jpg','RYANAIR',3);
---Insert failed for rows  51  through  100
---ORA-01012: not logged on
 --Row 51
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'http://www.footballfrance.fr/wp-content/uploads/2013/12/Uncle-Bens-%D0%BF%D0%B5%D1%81%D0%BE%D1%87%D0%BD%D0%B8%D1%86%D0%B0-165618.jpeg','UNCLE BENS',3);
 --Row 52
@@ -235,7 +235,7 @@ INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_I
 --Row 53
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'http://1000logos.net/wp-content/uploads/2016/10/Bluetooth-Logo.png','BLUETOOTH',1);
 --Row 54
-INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'http://www.breakinoutfestival.com/wp-content/uploads/2017/07/Stunning-Channel-Fashion-Logo-35-With-Additional-Logo-Generator-with-Channel-Fashion-Logo.jpg','CHANNEL',1);
+INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Chanel_logo-no_words.svg/1280px-Chanel_logo-no_words.svg.png','CHANEL',1);
 --Row 55
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'https://www.downloadbestnow.com/wp-content/uploads/2017/06/McAfee-Stinger-12.png','MCAFEE',5);
 --Row 56
@@ -266,7 +266,6 @@ INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_I
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/0022/2378/brand.gif?itok=wN7gYdiz','ABARTH',5);
 --Row 69
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'http://moziru.com/images/louis-vuitton-clipart-20.jpg','LOUIS VUITON',2);
---Row 70
 --Row 71
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'https://s3.amazonaws.com/cms.ipressroom.com/226/files/201411/549b3a18f6091d6e11000002_DD_Logo_Cup/DD_Logo_Cup_db80915b-dfdd-41e1-b21d-e5f9d8d5ba0f-prv.jpg','DUNKINN DONUTS',3);
 --Row 72
@@ -333,121 +332,3 @@ INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_I
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'https://lezebre.lu/images/detailed/18/Piaggio_Logo3.png','PIAGGIO',4);
 --Row 103
 INSERT INTO LOGO (ID_LOGO, LIEN_LOGO, REPONSE, ID_COLLECTION) VALUES (SEQ_LOGO_ID_LOGO.nextval,'https://i.pinimg.com/originals/ea/48/b2/ea48b28afcff0c311205d1c67d7010e7.png','PUNSHER',5);
-
-CREATE OR REPLACE PROCEDURE creer_partie(pniveau IN partie.NIVEAU%TYPE,ppseudo IN partie.PSEUDO%TYPE,
-  pid_collection OUT COLLECTION.ID_COLLECTION%TYPE,pid_partie OUT PARTIE.ID_PARTIE%TYPE ) IS
-  vtemps NUMBER;
-  vid_partie PARTIE.ID_PARTIE%TYPE;
-  vid_collection COLLECTION.ID_COLLECTION%TYPE;
-    check_exception EXCEPTION;
-    foreign_key_exception EXCEPTION;
-  PRAGMA EXCEPTION_INIT(check_exception,-2290);
-  PRAGMA EXCEPTION_INIT(foreign_key_exception,-2291);
-  ecode NUMBER;
-  errm VARCHAR(20);
-  BEGIN
-
-    IF pniveau = 1 OR pniveau = 2 THEN
-      vtemps := 300;
-    ELSIF pniveau = 3 OR pniveau = 4 THEN
-      vtemps := 240;
-    ELSIF pniveau = 5 OR pniveau = 6 THEN
-      vtemps := 210;
-    ELSIF pniveau = 7 OR pniveau = 8 THEN
-      vtemps := 180;
-    ELSIF pniveau = 9 OR pniveau = 10 THEN
-      vtemps := 150;
-    END IF;
-
-    INSERT INTO PARTIE(ID_PARTIE,TEMPS,DATE_PARTIE,PSEUDO,NIVEAU,STATUT)
-    VALUES (SEQ_PARTIE_ID_PARTIE.nextval,vtemps,SYSDATE,ppseudo,pniveau,'EC');
-
-    SELECT MAX(ID_PARTIE) INTO vid_partie FROM PARTIE;
-
-    SELECT ID_COLLECTION INTO vid_collection FROM NIVEAU WHERE NIVEAU=pniveau;
-
-    pid_partie := vid_partie;
-    pid_collection := vid_collection;
-
-    EXCEPTION
-    WHEN NO_DATA_FOUND  THEN
-    RAISE_APPLICATION_ERROR(-20010,'Ce niveau n''est pas présent dans la BD');
-    WHEN DUP_VAL_ON_INDEX THEN
-    RAISE_APPLICATION_ERROR(-20006,'Cette partie existe déjà ! ');
-    WHEN check_exception THEN
-    RAISE_APPLICATION_ERROR(-20007,'Le statut doit être soit EC (en cours), soit G (gagné), soit P (perdu)');
-    WHEN foreign_key_exception THEN
-    IF(SQLERRM  = '%fk_partie_pseudo%') THEN
-      RAISE_APPLICATION_ERROR(-20008,'La référence de ce pseudo n''existe pas');
-    ELSE
-      RAISE_APPLICATION_ERROR(-20009,'La référence de ce niveau n''existe pas');
-    END IF;
-    WHEN OTHERS  THEN
-    ecode := SQLCODE;
-    errm :=SQLERRM;
-    RAISE_APPLICATION_ERROR(ecode,errm);
-  END;
-
-
-CREATE OR REPLACE PROCEDURE connexion(ppseudo IN UTILISATEUR.PSEUDO%TYPE,
-                                      ppassword OUT UTILISATEUR.MOT_DE_PASSE%TYPE) IS
-  ecode NUMBER;
-  errm VARCHAR(20);
-  BEGIN
-    SELECT MOT_DE_PASSE INTO ppassword FROM UTILISATEUR WHERE PSEUDO=ppseudo;
-
-    EXCEPTION
-    WHEN NO_DATA_FOUND THEN
-    RAISE_APPLICATION_ERROR(-20002,'Aucun tuple portant ce pseudo !');
-    WHEN OTHERS  THEN
-    ecode := SQLCODE;
-    errm :=SQLERRM;
-    RAISE_APPLICATION_ERROR(ecode,errm);
-  END;
-
-CREATE OR REPLACE PROCEDURE creer_repond(presultat_reponse IN REPOND.RESULTAT_REPONSE%TYPE,preponse_repondue IN REPOND.REPONSE_REPONDUE%TYPE,ppseudo IN partie.PSEUDO%TYPE,
-  pid_logo OUT LOGO.ID_LOGO%TYPE,pid_partie OUT PARTIE.ID_PARTIE%TYPE ) IS
-    check_exception EXCEPTION;
-    foreign_key_exception EXCEPTION;
-  PRAGMA EXCEPTION_INIT(check_exception,-2290);
-  PRAGMA EXCEPTION_INIT(foreign_key_exception,-2291);
-  ecode NUMBER;
-  errm VARCHAR(20);
-  BEGIN
-
-    INSERT INTO REPOND(ID_LOGO,ID_PARTIE,DATE_REPONSE,RESULTAT_REPONSE,REPONSE_REPONDUE)
-    VALUES (pid_logo,pid_partie,SYSDATE,presultat_reponse,preponse_repondue);
-
-    EXCEPTION
-    WHEN DUP_VAL_ON_INDEX THEN
-    RAISE_APPLICATION_ERROR(-20011,'Vous avez déjà répondu dans cette partie à cette question ! ');
-    WHEN check_exception THEN
-    RAISE_APPLICATION_ERROR(-20007,'Le résultat de la réponse doit être entre 0 et 1');
-    WHEN foreign_key_exception THEN
-    IF(SQLERRM  = '%fk_repond_logo%') THEN
-      RAISE_APPLICATION_ERROR(-20008,'La référence de ce logo n''existe pas');
-    ELSE
-      RAISE_APPLICATION_ERROR(-20009,'La référence de cette partie n''existe pas');
-    END IF;
-    WHEN OTHERS  THEN
-    ecode := SQLCODE;
-    errm :=SQLERRM;
-    RAISE_APPLICATION_ERROR(ecode,errm);
-  END;
-
-
-  CREATE OR REPLACE PROCEDURE inscription(ppseudo  utilisateur.PSEUDO%TYPE , ppassword utilisateur.MOT_DE_PASSE%TYPE) IS
-  ecode NUMBER;
-  errm VARCHAR(20);
-  BEGIN
-    INSERT INTO UTILISATEUR(PSEUDO, MOT_DE_PASSE,DATE_INSCRIPTION,EXPERIENCE)
-    VALUES (ppseudo,ppassword,SYSDATE,1);
-
-    EXCEPTION
-    WHEN DUP_VAL_ON_INDEX THEN
-    RAISE_APPLICATION_ERROR(-20001,'Ce compte existe déjà !');
-    WHEN OTHERS THEN
-    ecode := SQLCODE;
-    errm :=SQLERRM;
-    RAISE_APPLICATION_ERROR(ecode,errm);
-  END;

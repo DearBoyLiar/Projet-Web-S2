@@ -7,7 +7,7 @@ session_start();
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../css/style.css">
     <link rel="stylesheet" type="text/css" href="../../js/jquery-ui-1.12.1/jquery-ui.css">
-    <title>QUIZZ : Choix du niveau</title>
+    <title>QUIZZ : Menu</title>
 </head>
 
 <body>
@@ -17,11 +17,14 @@ session_start();
 <script type="text/javascript" src='../../js/jquery-3.1.1.min.js'></script>
 <script type="text/javascript" src='../../js/jquery-ui-1.12.1/jquery-ui.js'></script>
 
-<?php include ('header.php');?>
+<?php session_start(); include ('header.php');?>
 
 <div  class="accueil">
     <form method="post" action="../controleur/ChoixNiveauControleur.php">
         <button>Choisir votre niveau</button>
+    </form>
+    <form method="post" action="../controleur/PartiesJoueesControleur.php">
+        <button>Voir vos parties jouées</button>
     </form>
 </div>
 </body>
