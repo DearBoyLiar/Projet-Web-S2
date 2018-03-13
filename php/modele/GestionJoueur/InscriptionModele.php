@@ -28,6 +28,9 @@ function inscrire($pseudo,$password,$confirmed_password,$connexion)
 
         // Execution de la requête et récupération d'un message d'erreur si erreur
         if ( ! oci_execute($stid) ){
+
+            $e = oci_error($stid);
+            echo $e['message'];
             oci_close($connexion);
             echo "<h2>Un compte avec ce pseudo existe déjà, merci d'en choisir un autre</h2>".'<br />';
             return false;

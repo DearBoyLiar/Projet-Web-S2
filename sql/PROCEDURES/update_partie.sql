@@ -11,6 +11,7 @@ CREATE OR REPLACE PROCEDURE update_partie(pid_partie IN PARTIE.ID_PARTIE%TYPE,ps
       update_exp_utilisateur(ppseudo,pniveau);
     END IF;
 
+    DELETE FROM PARTIE WHERE STATUT='EC';
     COMMIT;
   EXCEPTION
     WHEN check_exception THEN

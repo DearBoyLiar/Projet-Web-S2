@@ -108,22 +108,23 @@ function update_partie($partie,$statut,$score,$pseudo,$niveau,$connexion) {
  * @return array
  */
 function get_highscore($niveau,$mode,$connexion) {
-    $period = 1; // correspond à la période que l'on retire à la date en fonction du mode choisi
-    if ($mode == 'min') {
-        // Requête pour les highscore_minute
-        $query = "SELECT PSEUDO,DATE_PARTIE,extract(HOUR from cast(to_char(DATE_PARTIE, 'DD-MON-YYYY HH24:MI:SS') as timestamp)) as HOURS,extract(minute from cast(to_char(DATE_PARTIE, 'DD-MON-YYYY HH24:MI:SS')as timestamp)) as MINUTES,SCORE FROM PARTIE WHERE NIVEAU = :niveau AND DATE_PARTIE >= (CURRENT_TIMESTAMP - interval '".$period."' minute) ORDER BY SCORE DESC";
-    } else if ($mode == 'hour') {
-        // Requête pour les highscore_hour
-        $query = "SELECT PSEUDO,DATE_PARTIE,extract(HOUR from cast(to_char(DATE_PARTIE, 'DD-MON-YYYY HH24:MI:SS') as timestamp)) as HOURS,extract(minute from cast(to_char(DATE_PARTIE, 'DD-MON-YYYY HH24:MI:SS')as timestamp)) as MINUTES,SCORE FROM PARTIE WHERE NIVEAU = :niveau AND DATE_PARTIE >= (CURRENT_TIMESTAMP - interval '".$period."' hour ) ORDER BY SCORE DESC";
-    } else {
-        // Requête pour les highscore_global
-        $query = "SELECT PSEUDO,DATE_PARTIE,extract(HOUR from cast(to_char(DATE_PARTIE, 'DD-MON-YYYY HH24:MI:SS') as timestamp)) as HOURS,extract(minute from cast(to_char(DATE_PARTIE, 'DD-MON-YYYY HH24:MI:SS')as timestamp)) as MINUTES,SCORE FROM PARTIE WHERE NIVEAU = :niveau ORDER BY SCORE DESC";
-    }
+
+    // Requête pour les highscore_global
+    $query = "begin recup_highscore(:niveau,:mode,:pseudos,:dates,:scores); end;";
 
     $stid = oci_parse($connexion, $query);
 
+    $pseudos = array();
+    $dates = array();
+    $scores = array();
     // On lie les marqueurs avec les variables
     oci_bind_by_name($stid, ':niveau', $niveau);
+    oci_bind_by_name($stid, ':mode', $mode);
+    oci_bind_array_by_name($stid, ':pseudos', $pseudos,255,SQLT_VCS); // récupération des pseudos
+    oci_bind_array_by_name($stid, ':dates', $dates,255,SQLT_ODT); // récupération des dates pour le global
+    oci_bind_array_by_name($stid, ':scores', $scores,2,SQLT_NUM); //  récupération des scores
+
+
 
     if ( ! oci_execute($stid)){
         // En cas de soucie sur la requête qui s'exécute mal
@@ -132,11 +133,9 @@ function get_highscore($niveau,$mode,$connexion) {
         return  $e['message'];
     } else {
         $high_score = array();
-        while (($row = oci_fetch_array($stid, OCI_ASSOC)) != false) {
-            array_push($high_score,$row);
-        }
-        oci_free_statement($stid);
-        oci_close($connexion);
+        array_push($high_score,$pseudos);
+        array_push($high_score,$dates);
+        array_push($high_score,$scores);
 
         return $high_score;
     }

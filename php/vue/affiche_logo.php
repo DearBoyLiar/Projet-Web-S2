@@ -25,7 +25,7 @@ function afficheLogo($tab)
             </tr>";
         echo "</table>";
     }
-    echo "<button><VALIDER</button>"; // VOIR POUR L'AFFICHER
+    echo "<button id='btn_valider'><img src='../../img/valider_icon.svg' alt='VALIDER'></button>";
     echo "</form>";
     echo "</div>";
 }

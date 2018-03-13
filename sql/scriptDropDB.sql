@@ -10,6 +10,7 @@ drop procedure inscription;
 drop procedure creer_partie;
 drop procedure creer_repond;
 drop procedure update_partie;
+drop procedure update_exp_utilisateur;
 
 drop sequence SEQ_COLLECTION_ID_COLLECTION;
 drop sequence SEQ_LOGO_ID_LOGO;

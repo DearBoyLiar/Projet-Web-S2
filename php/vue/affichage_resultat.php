@@ -21,22 +21,25 @@ function affiche_resultat_high_score($score,$statut,$highscore_minute,$highscore
         echo "<h4>(Il vous faut répondre correctement à ".$_SESSION['min_score']['NB_LOGO_GAGNE'].
             " questions pour passer au niveau suivant)</h4>";
     }
+    var_dump($highscore_minute);
     // Affiche les highscore minute (limité à 5 max)
-    if(count($highscore_hour)>5) {
+    if(count($highscore_minute[0])>=1) {
         echo "<h3>Score pour la dernière minute :</h3>";
         affiche_high_score($highscore_minute);
     }
 
+    var_dump($highscore_hour);
     // Affiche les highscore heure (limité à 5 max)
-    if(count($highscore_hour) >1) {
+    if(count($highscore_hour[0]) >=1) {
         echo"<h3>Score pour la dernière heure :</h3>";
         affiche_high_score($highscore_hour);
     }
 
+    var_dump($highscore_global);
     // Affiche les highscore globaux (limité à 5 max)
-    if(count($highscore_global)>1) {
+    if(count($highscore_global[0])>=1) {
         echo"<h3>Score global :</h3>";
-        affiche_high_score($highscore_global);
+        affiche_high_score_global($highscore_global);
     }
 
     echo "</form>";
@@ -50,18 +53,41 @@ function affiche_resultat_high_score($score,$statut,$highscore_minute,$highscore
 function affiche_high_score($high_score) {
     echo "<table class='classement'>";
     echo    "<tr>
+                <th>RANG</th>
                 <th>PSEUDO</th>
-                <th>DATE</th>
-                <th>HEURE</th>
                 <th>SCORE</th>
              </tr>";
     for($i=0; $i < sizeof($high_score) && $i <5;$i++) {
+        $rang = $i+1;
         echo "<tr>
-                <td>".$high_score[$i]['PSEUDO']."</td>
-                <td>".$high_score[$i]['DATE_PARTIE']."</td>
-                <td>".$high_score[$i]['HOURS'].":".$high_score[$i]['MINUTES']."</td>
-                <td>".intval($high_score[$i]['SCORE'])."</td>
+                <td>".$rang."</td>
+                <td>".$high_score[0][$i]['PSEUDO']."</td>
+                <td>".intval($high_score[1][$i]['SCORE'])."</td>
              </tr>";
             }
+    echo "</table>";
+}
+
+/**
+ * Affichage des différents tableaux dde highscore
+ * @param $high_score
+ */
+function affiche_high_score_global($high_score) {
+    echo "<table class='classement'>";
+    echo    "<tr>
+                <th>RANG</th>
+                <th>PSEUDO</th>
+                <th>DATE</th>
+                <th>SCORE</th>
+             </tr>";
+    for($i=0; $i < sizeof($high_score) && $i <5;$i++) {
+        $rang = $i+1;
+        echo "<tr>
+                <td>".$rang."</td>
+                <td>".$high_score[0][$i]['PSEUDO']."</td>
+                <td>".$high_score[1][$i]['DATE_PARTIE']."</td>
+                <td>".intval($high_score[2][$i]['SCORE'])."</td>
+             </tr>";
+    }
     echo "</table>";
 }
