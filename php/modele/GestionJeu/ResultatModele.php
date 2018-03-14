@@ -109,35 +109,47 @@ function update_partie($partie,$statut,$score,$pseudo,$niveau,$connexion) {
  */
 function get_highscore($niveau,$mode,$connexion) {
 
-    // Requête pour les highscore_global
-    $query = "begin recup_highscore(:niveau,:mode,:pseudos,:dates,:scores); end;";
+    // Requête pour les highscore
+    $query = 'begin  recup_highscore(:niveau,:mode,:pseudos,:dates,:scores); end;';
 
     $stid = oci_parse($connexion, $query);
 
-    $pseudos = array();
-    $dates = array();
-    $scores = array();
+    $pseudos   = oci_new_collection($connexion, 'PSEUDOS','ZZW2090A');
+    $dates = oci_new_collection($connexion, 'DATES','ZZW2090A');
+    $scores = oci_new_collection($connexion, 'SCORES','ZZW2090A');
+
     // On lie les marqueurs avec les variables
-    oci_bind_by_name($stid, ':niveau', $niveau);
-    oci_bind_by_name($stid, ':mode', $mode);
-    oci_bind_array_by_name($stid, ':pseudos', $pseudos,255,SQLT_VCS); // récupération des pseudos
-    oci_bind_array_by_name($stid, ':dates', $dates,255,SQLT_ODT); // récupération des dates pour le global
-    oci_bind_array_by_name($stid, ':scores', $scores,2,SQLT_NUM); //  récupération des scores
-
-
-
-    if ( ! oci_execute($stid)){
-        // En cas de soucie sur la requête qui s'exécute mal
-        oci_close($connexion);
-        $e = oci_error($stid);
-        return  $e['message'];
+    if (oci_bind_by_name($stid, ':niveau', $niveau) &
+    oci_bind_by_name($stid, ':mode', $mode) &
+    oci_bind_by_name($stid, ':pseudos', $pseudos, 5, SQLT_NTY)& // récupération des pseudos
+    oci_bind_by_name($stid, ':dates', $dates, 5, SQLT_NTY)&  // récupération des dates
+    oci_bind_by_name($stid, ':scores', $scores, 5, SQLT_NTY) // récupération des scores
+    ) {
+        if ( ! oci_execute($stid)){
+            // En cas de soucie sur la requête qui s'exécute mal
+            oci_close($connexion);
+            $e = oci_error($stid);
+            return  $e['message'];
+        } else {
+            $highscore = array();
+            for ($i = 0; $i < 5; $i++) {
+                $pseudo   = $pseudos->getElem($i);
+                $date = $dates->getElem($i);
+                $score = $scores->getElem($i);
+                if (!is_bool($pseudo)) {
+                    $highscore[$i] = ['PSEUDO' =>$pseudo,'DATE_PARTIE' =>$date,'SCORE' => $score];
+                }
+            }
+            oci_close($connexion);
+            return $highscore;
+        }
     } else {
-        $high_score = array();
-        array_push($high_score,$pseudos);
-        array_push($high_score,$dates);
-        array_push($high_score,$scores);
-
-        return $high_score;
+      echo 'faux';
     }
+
+
+
+
+
 
 }

@@ -59,14 +59,14 @@ if ($score >=$min_score['NB_LOGO_GAGNE']) {
 
 
 // Récupération des highscore pour la minute
-$highscore_minute = get_highscore($_SESSION['niveau'],0,$dbConn);
+$highscore_minute = get_highscore(intval($_SESSION['niveau']),0,$dbConn);
 
 
 // Récupération des highscore pour l'heure
-$highscore_hour = get_highscore($_SESSION['niveau'],1,$dbConn);
+$highscore_hour = get_highscore(intval($_SESSION['niveau']),1,$dbConn);
 
 // Récupération des highscore global
-$highscore_global = get_highscore($_SESSION['niveau'],2,$dbConn);
+$highscore_global = get_highscore(intval($_SESSION['niveau']),2,$dbConn);
 
 
 // Afficher le résultat de la partie, ainsi que les high_score

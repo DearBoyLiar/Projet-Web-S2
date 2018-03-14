@@ -21,27 +21,23 @@ function affiche_resultat_high_score($score,$statut,$highscore_minute,$highscore
         echo "<h4>(Il vous faut répondre correctement à ".$_SESSION['min_score']['NB_LOGO_GAGNE'].
             " questions pour passer au niveau suivant)</h4>";
     }
-    var_dump($highscore_minute);
     // Affiche les highscore minute (limité à 5 max)
-    if(count($highscore_minute[0])>=1) {
+    if(!is_null($highscore_minute[0])) {
         echo "<h3>Score pour la dernière minute :</h3>";
         affiche_high_score($highscore_minute);
     }
 
-    var_dump($highscore_hour);
     // Affiche les highscore heure (limité à 5 max)
-    if(count($highscore_hour[0]) >=1) {
+    if(!is_null($highscore_hour[0])) {
         echo"<h3>Score pour la dernière heure :</h3>";
         affiche_high_score($highscore_hour);
     }
 
-    var_dump($highscore_global);
     // Affiche les highscore globaux (limité à 5 max)
-    if(count($highscore_global[0])>=1) {
+    if(!is_null($highscore_global[0])) {
         echo"<h3>Score global :</h3>";
         affiche_high_score_global($highscore_global);
     }
-
     echo "</form>";
     echo "</div>";
 }
@@ -61,8 +57,8 @@ function affiche_high_score($high_score) {
         $rang = $i+1;
         echo "<tr>
                 <td>".$rang."</td>
-                <td>".$high_score[0][$i]['PSEUDO']."</td>
-                <td>".intval($high_score[1][$i]['SCORE'])."</td>
+                <td>".$high_score[$i]['PSEUDO']."</td>
+                <td>".intval($high_score[$i]['SCORE'])."</td>
              </tr>";
             }
     echo "</table>";
@@ -84,9 +80,9 @@ function affiche_high_score_global($high_score) {
         $rang = $i+1;
         echo "<tr>
                 <td>".$rang."</td>
-                <td>".$high_score[0][$i]['PSEUDO']."</td>
-                <td>".$high_score[1][$i]['DATE_PARTIE']."</td>
-                <td>".intval($high_score[2][$i]['SCORE'])."</td>
+                <td>".$high_score[$i]['PSEUDO']."</td>
+                <td>".$high_score[$i]['DATE_PARTIE']."</td>
+                <td>".intval($high_score[$i]['SCORE'])."</td>
              </tr>";
     }
     echo "</table>";
