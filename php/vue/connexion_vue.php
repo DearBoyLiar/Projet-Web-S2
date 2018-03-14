@@ -6,8 +6,14 @@
     <link rel="stylesheet" type="text/css" href="../../js/jquery-ui-1.12.1/jquery-ui.css">
     <title>QUIZZ : Connexion</title>
 </head>
-
 <body>
+<?php
+session_start();
+if (isset($_SESSION) && !empty($_SESSION['pseudo'])) {
+    echo "<div id ='nomuser'>".$_SESSION['pseudo']."<a href='../vue/deconnexion.php' title='Se déconnecter'>";
+    echo "<img src='../../img/logout.png' alt='deconnexion'></a></div>";
+}
+?>
 <!-- Script controle saisie -->
 <script type="text/javascript" src='../../js/script_connexion.js'></script>
 
@@ -24,6 +30,6 @@
         <button>SE CONNECTER</button>
 		<a href="inscription_vue.php">Pas encore inscrit ? S'inscrire</a>
     </form>
-</div> 
+</div>
 </body>
 </html>

@@ -25,7 +25,6 @@ if (isset($_SESSION['pseudo'])) {
 
 } else {
     echo "<h2>Vous n'avez pas accès à cette page ! </h2>".'<br />';
-
     echo "<a href='accueil.php'><h3>Retourner à la page d'accueil</h3></a>";
 }
 

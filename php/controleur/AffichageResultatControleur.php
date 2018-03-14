@@ -6,13 +6,13 @@
     <title>QUIZZ : Résultat</title>
 </head>
 <header>
-    <a href="../vue/accueil.php"><img src="../../img/logo.png" alt="LOGO"></a>
     <?php
     session_start();
     if (isset($_SESSION) && !empty($_SESSION['pseudo'])) {
-        echo "<div id ='nomuser'>".$_SESSION['pseudo']."<a href='../vue/deconnexion.php' title='Se déconnecter'>";
-        echo "<img src='../../img/logout.png' alt='deconnexion'></a></div>";
-    }
+    echo "<a href='../vue/menu.php'><img src='../../img/logo.png' alt='LOGO'></a> ";
+    echo "<div id ='nomuser'>".$_SESSION['pseudo']."<a href='../vue/deconnexion.php' title='Se déconnecter'>";
+    echo "<img src='../../img/logout.png' alt='deconnexion'></a></div>";
+
     ?>
 </header>
 <body>
@@ -72,7 +72,10 @@ $highscore_global = get_highscore(intval($_SESSION['niveau']),2,$dbConn);
 // Afficher le résultat de la partie, ainsi que les high_score
 affiche_resultat_high_score($score,$statut,$highscore_minute,$highscore_hour,$highscore_global);
 
-
+} else {
+    echo "<h2>Vous n'avez pas accès à cette page ! </h2>".'<br />';
+    echo "<a href='../vue/accueil.php'><h3>Retourner à la page d'accueil</h3></a>";
+}
 ?>
 
 </body>

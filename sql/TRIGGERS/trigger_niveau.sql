@@ -1,5 +1,5 @@
 CREATE OR REPLACE TRIGGER trigger_blocage
-  BEFORE INSERT ON PARTIE
+  AFTER INSERT ON PARTIE
   FOR EACH ROW
   DECLARE
     vexperience utilisateur.experience%TYPE;

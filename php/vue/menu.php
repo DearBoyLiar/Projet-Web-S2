@@ -9,7 +9,16 @@ session_start();
     <link rel="stylesheet" type="text/css" href="../../js/jquery-ui-1.12.1/jquery-ui.css">
     <title>QUIZZ : Menu</title>
 </head>
-
+<header>
+    <?php
+    session_start();
+    if (isset($_SESSION) && !empty($_SESSION['pseudo'])) {
+        echo "<a href='../vue/menu.php'><img src='../../img/logo.png' alt='LOGO'></a> ";
+        echo "<div id ='nomuser'>" . $_SESSION['pseudo'] . "<a href='../vue/deconnexion.php' title='Se déconnecter'>";
+        echo "<img src='../../img/logout.png' alt='deconnexion'></a></div>";
+    }
+    ?>
+</header>
 <body>
 <!-- Script controle saisie -->
 <script type="text/javascript" src='../../js/script_connexion.js'></script>
@@ -17,14 +26,11 @@ session_start();
 <script type="text/javascript" src='../../js/jquery-3.1.1.min.js'></script>
 <script type="text/javascript" src='../../js/jquery-ui-1.12.1/jquery-ui.js'></script>
 
-<?php session_start(); include ('header.php');?>
-
 <div  class="accueil">
     <form method="post" action="../controleur/ChoixNiveauControleur.php">
-        <button>Choisir votre niveau</button>
-    </form>
-    <form method="post" action="../controleur/PartiesJoueesControleur.php">
-        <button>Voir vos parties jouées</button>
+        <button name="choix" value=0>Choisir votre niveau</button>
+        <br />
+        <button name="choix" value=1>Voir vos parties jouées</button>
     </form>
 </div>
 </body>

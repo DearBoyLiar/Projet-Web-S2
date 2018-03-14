@@ -144,7 +144,7 @@ function get_highscore($niveau,$mode,$connexion) {
             return $highscore;
         }
     } else {
-      echo 'faux';
+      echo 'ERREUR SUR LE BINDING DES PARAMETRES !';
     }
 
 

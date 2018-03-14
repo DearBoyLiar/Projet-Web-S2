@@ -23,9 +23,6 @@ function connexion($pseudo,$password,$connexion)
         if ( ! oci_execute($stid)){
             // En cas de soucie sur la requête qui s'exécute mal
             oci_close($connexion);
-            $e = oci_error($stid);
-            echo $e['message'];
-            echo "<h2>Une erreur est survenue, merci de réessayer ultérieurement</h2>".'<br />';
             return false;
         } else {
             oci_close($connexion);
@@ -34,7 +31,6 @@ function connexion($pseudo,$password,$connexion)
                 // session_start
                 session_start();
                 $_SESSION['pseudo'] = $pseudo;
-                echo  "<h2>Vous êtes connecté !</h2>".'<br />';
                 return true;
             } else {
                 // Pas le bon mot de passe renseigné => renvoie à l'accueil
