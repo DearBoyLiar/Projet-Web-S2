@@ -2,10 +2,10 @@
 /**
  * @param $tab
  */
-function afficheLogoPartieJouee($tab)
+function afficheLogoPartieJouee($tab,$temps)
 {
     echo "<div  class='accueil'>";
-    echo "<form method='post' action='../controleur/AffichageResultatControleur.php' onload='compteARebour()' onsubmit='return ValiderReponse()'>";
+    echo "<form id='validation_partie' method='post' action='../controleur/AffichageResultatControleur.php' onsubmit='return ValiderReponse()'>";
     echo "<h1>Répondez aux questions, bon courage !</h1>";
     $tab = trieLogo($tab);
     $_SESSION['logos'] = $tab; // Récupère en session les logos choisis
@@ -25,10 +25,11 @@ function afficheLogoPartieJouee($tab)
             </tr>";
         echo "</table>";
     }
-    echo "<div id='compteur'>";echo $_SESSION['temps']; echo "</div>";
+    echo "<div id='label_compteur'>Temps : </div>";
+    echo "<div id='compteur'>";echo $temps; echo "</div>";
     echo "<button id='btn_valider'><img src='../../img/valider_icon.svg' alt='VALIDER'></button>";
-    echo "</form>";
     echo "<script >setInterval(rebour,1000);</script>";
+    echo "</form>";
     echo "</div>";
 }
 

@@ -166,7 +166,27 @@ select {
 	border-radius:50px;
 	text-align:center;
 	border: none;
-	box-shadow: 2px 2px 3px #999;
+	box-shadow: 2px 2px 2px #999;
+}
+
+#compteur {
+	position:fixed;
+	width:60px;
+	height:60px;
+	top:160px;
+	right:40px;
+	color: #3498db;
+	text-align:center;
+}
+
+#label_compteur {
+	position:fixed;
+	width:60px;
+	height:60px;
+	top:160px;
+	right:90px;
+	color: #3498db;
+	text-align:center;
 }
 
 /*

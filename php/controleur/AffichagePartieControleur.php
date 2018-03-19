@@ -32,7 +32,9 @@ $id_collection = creer_partie($_SESSION['niveau'],$_SESSION['pseudo'],$dbConn);
 if (isset($id_collection)) {
     if (recup_logo($id_collection,$dbConn)) {
         // Affichage des logos
-        afficheLogoPartieJouee($_SESSION['logos']);
+        $temps = $_SESSION['temps'];
+        $_SESSION['temps'] = NULL;
+        afficheLogoPartieJouee($_SESSION['logos'],$temps);
     }
 } else {
     echo "<h2>Ce niveau n'est pas accessible, vous n'avez pas l'experience requise</h2>".'<br />';

@@ -17,7 +17,7 @@ CREATE OR REPLACE PROCEDURE recup_highscore(pniveau IN ZZW2090A.NIVEAU.NIVEAU%TY
       BULK COLLECT into ppseudos, pdates,pscores
       FROM ZZW2090A.PARTIE
       WHERE NIVEAU = pniveau
-            AND DATE_PARTIE >= (CURRENT_TIMESTAMP - interval '1' minute)
+            AND DATE_PARTIE >= (CURRENT_TIMESTAMP - interval '1' hour)
       ORDER BY SCORE DESC;
     ELSIF pmode=2 THEN
       SELECT PSEUDO,DATE_PARTIE,SCORE

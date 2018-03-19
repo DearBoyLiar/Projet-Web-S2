@@ -2,10 +2,10 @@ CREATE OR REPLACE TRIGGER trigger_blocage
   AFTER INSERT ON PARTIE
   FOR EACH ROW
   DECLARE
-    vexperience utilisateur.experience%TYPE;
+    vexperience ZZW2090A.UITLISATEUR.experience%TYPE;
   BEGIN
 
-    SELECT EXPERIENCE INTO vexperience FROM UTILISATEUR WHERE PSEUDO = :NEW.PSEUDO;
+    SELECT EXPERIENCE INTO vexperience FROM ZZW2090A.UITLISATEUR WHERE PSEUDO = :NEW.PSEUDO;
 
     IF :NEW.niveau > vexperience THEN
       RAISE_APPLICATION_ERROR(-20009,'Ce niveau n''est pas accessible, vous n''avez pas l''exérience requise');
