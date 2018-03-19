@@ -25,10 +25,10 @@ function afficheLogoPartieJouee($tab)
             </tr>";
         echo "</table>";
     }
-    echo "<h4 id='temps' value='".$_SESSION['temps']."'></h4>";
-    echo "<div id='compteur'></div>";
+    echo "<div id='compteur'>";echo $_SESSION['temps']; echo "</div>";
     echo "<button id='btn_valider'><img src='../../img/valider_icon.svg' alt='VALIDER'></button>";
     echo "</form>";
+    echo "<script >setInterval(rebour,1000);</script>";
     echo "</div>";
 }
 
