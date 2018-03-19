@@ -2,7 +2,7 @@
 
 // Création de la partie
 function creer_partie($niveau,$pseudo,$connexion) {
-    $query = "begin creer_partie(:niveau,:pseudo,:id_collection,:id_partie); end;";
+    $query = "begin creer_partie(:niveau,:pseudo,:id_collection,:id_partie,:temps); end;";
 
     $stid = oci_parse($connexion, $query);
 
@@ -11,6 +11,7 @@ function creer_partie($niveau,$pseudo,$connexion) {
     oci_bind_by_name($stid, ':niveau', $niveau,255);
     oci_bind_by_name($stid, ':id_collection', $id_collection,255);
     oci_bind_by_name($stid, ':id_partie', $id_partie,255);
+    oci_bind_by_name($stid, ':temps', $temps,255);
 
     if ( ! oci_execute($stid)){
         // Si le trigger sur l'expérience ne passe pas
@@ -18,6 +19,7 @@ function creer_partie($niveau,$pseudo,$connexion) {
     }
     oci_close($connexion);
     $_SESSION['id_partie'] = $id_partie; // récupération de l'id_partie
+    $_SESSION['temps'] = $temps;
     return $id_collection;
 }
 
@@ -25,7 +27,7 @@ function creer_partie($niveau,$pseudo,$connexion) {
 // Récupération de 10 logos (au hasard) appartenant à cette collection
 function recup_logo($collection,$connexion) {
 
-    $query = "SELECT ID_LOGO,LIEN_LOGO,REPONSE FROM LOGO WHERE ID_COLLECTION ='".$collection."'";
+    $query = "SELECT ID_LOGO,LIEN_LOGO,REPONSE FROM ZZW2090A.LOGO WHERE ID_COLLECTION ='".$collection."'";
 
     $stid = oci_parse($connexion, $query);
 
@@ -51,7 +53,7 @@ function recup_logo($collection,$connexion) {
 }
 
 function get_parties($pseudo,$niveau,$connexion) {
-    $query = "SELECT ID_PARTIE,DATE_PARTIE,STATUT,SCORE FROM PARTIE WHERE PSEUDO = '".$pseudo."' AND NIVEAU ='".$niveau."' ORDER BY ID_PARTIE DESC";
+    $query = "SELECT ID_PARTIE,DATE_PARTIE,STATUT,SCORE FROM ZZW2090A.PARTIE WHERE PSEUDO = '".$pseudo."' AND NIVEAU ='".$niveau."' ORDER BY ID_PARTIE DESC";
 
     $stid = oci_parse($connexion, $query);
 
@@ -76,7 +78,7 @@ function get_parties($pseudo,$niveau,$connexion) {
 }
 
 function get_reponse_partie_choisie($id_partie,$connexion) {
-    $query = "SELECT ID_LOGO,RESULTAT_REPONSE,REPONSE_REPONDUE FROM REPOND WHERE ID_PARTIE = '".$id_partie."' ORDER BY DATE_REPONSE ASC";
+    $query = "SELECT ID_LOGO,RESULTAT_REPONSE,REPONSE_REPONDUE FROM ZZW2090A.REPOND WHERE ID_PARTIE = '".$id_partie."' ORDER BY DATE_REPONSE ASC";
 
     $stid = oci_parse($connexion, $query);
 
@@ -101,7 +103,7 @@ function get_reponse_partie_choisie($id_partie,$connexion) {
 }
 
 function recup_logos_choisis($id_logo,$connexion) {
-    $query = "SELECT LIEN_LOGO FROM LOGO WHERE ID_LOGO = '".$id_logo."'";
+    $query = "SELECT LIEN_LOGO FROM ZZW2090A.LOGO WHERE ID_LOGO = '".$id_logo."'";
 
     $stid = oci_parse($connexion, $query);
 

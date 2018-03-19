@@ -15,8 +15,9 @@
 
     ?>
 </header>
-<body>
+<body">
 <script type="text/javascript" src='../../js/script_partie_jouee.js'></script>
+<script type="text/javascript" src='../../js/script_compte_a_rebour.js'></script>
 <?php
 
 include ('../modele/GestionBD/GestionBD.php');

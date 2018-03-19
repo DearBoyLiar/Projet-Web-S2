@@ -8,7 +8,7 @@
 session_start();
 
 function getNiveau($connexion) {
-    $query = "SELECT * from niveau";
+    $query = "SELECT * from ZZW2090A.NIVEAU";
 
     $stid = oci_parse($connexion, $query);
 

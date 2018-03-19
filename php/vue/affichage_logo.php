@@ -5,7 +5,7 @@
 function afficheLogoPartieJouee($tab)
 {
     echo "<div  class='accueil'>";
-    echo "<form method='post' action='../controleur/AffichageResultatControleur.php' onsubmit='return ValiderReponse()'>";
+    echo "<form method='post' action='../controleur/AffichageResultatControleur.php' onload='compteARebour()' onsubmit='return ValiderReponse()'>";
     echo "<h1>Répondez aux questions, bon courage !</h1>";
     $tab = trieLogo($tab);
     $_SESSION['logos'] = $tab; // Récupère en session les logos choisis
@@ -25,6 +25,8 @@ function afficheLogoPartieJouee($tab)
             </tr>";
         echo "</table>";
     }
+    echo "<h4 id='temps' value='".$_SESSION['temps']."'></h4>";
+    echo "<div id='compteur'></div>";
     echo "<button id='btn_valider'><img src='../../img/valider_icon.svg' alt='VALIDER'></button>";
     echo "</form>";
     echo "</div>";

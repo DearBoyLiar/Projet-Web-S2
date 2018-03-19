@@ -33,7 +33,7 @@ function inserer_repond($resultat_reponse,$reponse,$id_logo,$id_partie,$connexio
  * @return bool
  */
 function get_min_score($niveau,$connexion) {
-    $query = "SELECT NB_LOGO_GAGNE FROM NIVEAU WHERE NIVEAU = :niveau";
+    $query = "SELECT NB_LOGO_GAGNE FROM ZZW2090A.NIVEAU WHERE NIVEAU = :niveau";
 
     $stid = oci_parse($connexion, $query);
 

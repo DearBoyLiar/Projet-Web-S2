@@ -16,7 +16,7 @@ session_start();
         echo "<a href='../vue/menu.php'><img src='../../img/logo.png' alt='LOGO'></a> ";
         echo "<div id ='nomuser'>" . $_SESSION['pseudo'] . "<a href='../vue/deconnexion.php' title='Se déconnecter'>";
         echo "<img src='../../img/logout.png' alt='deconnexion'></a></div>";
-    }
+
     ?>
 </header>
 <body>
@@ -33,5 +33,12 @@ session_start();
         <button name="choix" value=1>Voir vos parties jouées</button>
     </form>
 </div>
+
+<?php
+} else {
+    echo "<h2>Vous n'avez pas accès à cette page ! </h2>".'<br />';
+    echo "<a href='../vue/accueil.php'><h3>Retourner à la page d'accueil</h3></a>";
+}
+?>
 </body>
 </html>
