@@ -16,14 +16,14 @@ CREATE OR REPLACE PROCEDURE creer_repond(presultat_reponse IN ZZW2090A.REPOND.RE
     COMMIT;
     EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN
-    RAISE_APPLICATION_ERROR(-20011,'Vous avez déjà répondu dans cette partie à cette question ! ');
+    RAISE_APPLICATION_ERROR(-20018,'Vous avez déjà répondu dans cette partie à cette question ! ');
     WHEN check_exception THEN
-    RAISE_APPLICATION_ERROR(-20007,'Le résultat de la réponse doit être entre 0 et 1');
+    RAISE_APPLICATION_ERROR(-20017,'Le résultat de la réponse doit être entre 0 et 1');
     WHEN foreign_key_exception THEN
     IF(SQLERRM  = '%fk_repond_logo%') THEN
-      RAISE_APPLICATION_ERROR(-20008,'La référence de ce logo n''existe pas');
+      RAISE_APPLICATION_ERROR(-20016,'La référence de ce logo n''existe pas');
     ELSE
-      RAISE_APPLICATION_ERROR(-20009,'La référence de cette partie n''existe pas');
+      RAISE_APPLICATION_ERROR(-20015,'La référence de cette partie n''existe pas');
     END IF;
     WHEN OTHERS  THEN
     ecode := SQLCODE;

@@ -2,7 +2,7 @@
 
 // Création de la partie
 function creer_partie($niveau,$pseudo,$connexion) {
-    $query = "begin creer_partie(:niveau,:pseudo,:id_collection,:id_partie,:temps); end;";
+    $query = "begin creer_partie(:niveau,:pseudo,:id_collection,:id_partie,:temps,:retour); end;";
 
     $stid = oci_parse($connexion, $query);
 
@@ -12,10 +12,13 @@ function creer_partie($niveau,$pseudo,$connexion) {
     oci_bind_by_name($stid, ':id_collection', $id_collection,255);
     oci_bind_by_name($stid, ':id_partie', $id_partie,255);
     oci_bind_by_name($stid, ':temps', $temps,255);
+    oci_bind_by_name($stid, ':retour', $retour,255);
 
     if ( ! oci_execute($stid)){
-        // Si le trigger sur l'expérience ne passe pas
-        return NULL;
+        // Si le trigger sur l'expérience ou le celui du blocage de partie ne passe pas
+        $e = oci_error($stid);
+        echo $e['message'];
+        return $retour;
     }
     oci_close($connexion);
     $_SESSION['id_partie'] = $id_partie; // récupération de l'id_partie

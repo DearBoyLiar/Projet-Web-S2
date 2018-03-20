@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/sql/PROCEDURES/recup_highscore.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sql/PROCEDURES/update_exp_utilisateur.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sql/PROCEDURES/update_partie.sql" dialect="Oracle" />
+    <file url="file://$PROJECT_DIR$/sql/TRIGGERS/trigger_blocage.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sql/TRIGGERS/trigger_niveau.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sql/script v1.sql" dialect="Oracle" />
     <file url="file://$PROJECT_DIR$/sql/scriptDropDB.sql" dialect="Oracle" />
