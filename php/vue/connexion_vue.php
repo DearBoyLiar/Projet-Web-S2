@@ -15,10 +15,10 @@ if (isset($_SESSION) && !empty($_SESSION['pseudo'])) {
 }
 ?>
 <!-- Script controle saisie -->
-<script type="text/javascript" src='../../js/script_connexion.js'></script>
+<script src='../../js/script_connexion.js'></script>
 
-<script type="text/javascript" src='../../js/jquery-3.1.1.min.js'></script>
-<script type="text/javascript" src='../../js/jquery-ui-1.12.1/jquery-ui.js'></script>
+<script src='../../js/jquery-3.1.1.min.js'></script>
+<script src='../../js/jquery-ui-1.12.1/jquery-ui.js'></script>
 
 <div  class="accueil">
     <form method="post" action="../controleur/ConnexionControleur.php" onsubmit="return verifierFormulaire()">

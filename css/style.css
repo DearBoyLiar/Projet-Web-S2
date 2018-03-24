@@ -18,7 +18,6 @@ html, body {
 /* HEADER */
 
 header {
-	box-shadow: 2px black;
     -moz-box-shadow: 12px 3px 12px 0px #9b9b9b; 
     -webkit-box-shadow: 12px 3px 12px 0px #9b9b9b;
     -o-box-shadow: 12px 3px 12px 0px #9b9b9b;
@@ -108,8 +107,8 @@ select {
   padding: 15px;
   color: #FFFFFF;
   font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
+  -webkit-transition: all ease;
+  transition: all ease;
   cursor: pointer;
 }
 
@@ -123,8 +122,8 @@ select {
 	padding: 15px;
 	color: #FFFFFF;
 	font-size: 14px;
-	-webkit-transition: all 0.3 ease;
-	transition: all 0.3 ease;
+	-webkit-transition: all ease;
+	transition: all ease;
 	cursor: pointer;
 }
 
@@ -220,20 +219,6 @@ table {
 	width:100%;
 }
 
-.par_origine > table {
-	border: none;
-}
-
-.par_origine table td {
-	valign:top;
-}
-
-.origine, .origine td, .origine th {
-	border-collapse: collapse;
-	border:1px solid #3498db;
-	background-color: white;
-	text-align: center;
-}
 
 /*
  * INSCRIPTION

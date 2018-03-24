@@ -16,8 +16,8 @@
     ?>
 </header>
 <body">
-<script type="text/javascript" src='../../js/script_partie_jouee.js'></script>
-<script type="text/javascript" src='../../js/script_rebours.js'></script>
+<script src='../../js/script_partie_jouee.js'></script>
+<script src='../../js/script_rebours.js'></script>
 <?php
 
 include ('../modele/GestionBD/GestionBD.php');
@@ -35,22 +35,18 @@ if ($creer_partie_reponse >  0) {
         $_SESSION['temps'] = NULL;
         afficheLogoPartieJouee($_SESSION['logos'],$temps);
     }
-} /*elseif ($creer_partie_reponse == 0) {
-    echo "<h2>Ce niveau n'est pas présent dans la BD</h2>".'<br />';
-    echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
-
 } elseif ($creer_partie_reponse == -1) {
     echo "<h2>Ce niveau n'est pas accessible, vous n'avez pas l'experience requise</h2>".'<br />';
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
 
-}  elseif ($creer_partie_reponse == -2) {
-    echo "<h2>Vous avez trop perdu durant cette heure (au moins 5 fois) vous êtes donc bloqué pendant 4 heures</h2>".'<br />';
+} elseif ($creer_partie_reponse == -2) {
+    echo "<h2>Vous êtes bloqué pour 4 heures</h2>".'<br />';
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
-} else {
 
+} else {
     echo "<h2> Une autre erreur est intervenu</h2>".'<br />';
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
-}*/
+}
 
 
 } else {

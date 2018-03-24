@@ -16,7 +16,7 @@
     ?>
 </header>
 <body>
-<script type="text/javascript" src='../../js/script_partie_choisie.js'></script>
+<script src='../../js/script_partie_choisie.js'></script>
 <?php
 
 include('../modele/GestionBD/GestionBD.php');

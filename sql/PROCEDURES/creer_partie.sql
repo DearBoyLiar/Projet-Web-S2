@@ -8,13 +8,8 @@ create or replace PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,
   vid_collection ZZW2090A.COLLECTION.ID_COLLECTION%TYPE;
     check_exception EXCEPTION;
     foreign_key_exception EXCEPTION;
-    blocage_experience EXCEPTION;
-    blocage_trop_perdu EXCEPTION;
-
   PRAGMA EXCEPTION_INIT(check_exception,-2290);
   PRAGMA EXCEPTION_INIT(foreign_key_exception,-2291);
-  PRAGMA EXCEPTION_INIT(blocage_experience,-20014);
-  PRAGMA EXCEPTION_INIT(blocage_trop_perdu,-20013);
   ecode NUMBER;
   errm VARCHAR(255);
   BEGIN
@@ -42,32 +37,31 @@ create or replace PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,
     pid_collection := vid_collection;
     ptemps := vtemps;
     COMMIT;
-    pretour := 0;
     EXCEPTION
-    WHEN blocage_experience THEN
-    pretour := 1;
-    WHEN blocage_trop_perdu THEN
-    pretour := 2;
     WHEN NO_DATA_FOUND THEN
     pretour := 3;
-    --RAISE_APPLICATION_ERROR(-20020,'Ce niveau n''est pas présent dans la BD');
+    RAISE_APPLICATION_ERROR(-20025,'Le niveau n''existe pas');
     WHEN DUP_VAL_ON_INDEX THEN
     pretour := 4;
-    --RAISE_APPLICATION_ERROR(-20026,'Cette partie existe déjà ! ');
+    RAISE_APPLICATION_ERROR(-20026,'Cette partie existe déjà ! ');
     WHEN check_exception THEN
-    --RAISE_APPLICATION_ERROR(-20027,'Le statut doit être soit EC (en cours), soit G (gagné), soit P (perdu)');
+    RAISE_APPLICATION_ERROR(-20027,'Le statut doit être soit EC (en cours), soit G (gagné), soit P (perdu)');
     pretour := 5;
     WHEN foreign_key_exception THEN
-    IF(SQLERRM  = '%fk_partie_pseudo%') THEN
+    IF(SQLERRM  LIKE '%fk_partie_pseudo%') THEN
       pretour := 6;
-    --RAISE_APPLICATION_ERROR(-20028,'La référence de ce pseudo n''existe pas');
+      RAISE_APPLICATION_ERROR(-20028,'La référence de ce pseudo n''existe pas');
     ELSE
       pretour := 7;
-    --RAISE_APPLICATION_ERROR(-20024,'La référence de ce niveau n''existe pas');
+      RAISE_APPLICATION_ERROR(-20024,'La référence de ce niveau n''existe pas');
     END IF;
     WHEN OTHERS  THEN
     ecode := SQLCODE;
     errm :=SQLERRM;
     pretour := 8;
-    --dbms_output.put_line(ecode || ' ' || errm);
+    IF(SQLERRM  LIKE '%-20014%') THEN
+      pretour := -1;
+    elsif (SQLERRM  LIKE '%-20013%') THEN
+      pretour := -2;
+    end if;
   END creer_partie;
