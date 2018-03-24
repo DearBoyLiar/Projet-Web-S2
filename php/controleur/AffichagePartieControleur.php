@@ -28,7 +28,6 @@ $_SESSION['niveau'] = intval($_POST['niveau']); // récupère en session le nive
 
 // Création de la partie pour le niveau choisi
 $creer_partie_reponse = creer_partie($_SESSION['niveau'],$_SESSION['pseudo'],$dbConn);
-
 if ($creer_partie_reponse >  0) {
     if (recup_logo($creer_partie_reponse,$dbConn)) {
         // Affichage des logos
@@ -36,8 +35,7 @@ if ($creer_partie_reponse >  0) {
         $_SESSION['temps'] = NULL;
         afficheLogoPartieJouee($_SESSION['logos'],$temps);
     }
-
-} elseif ($creer_partie_reponse == 0) {
+} /*elseif ($creer_partie_reponse == 0) {
     echo "<h2>Ce niveau n'est pas présent dans la BD</h2>".'<br />';
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
 
@@ -52,7 +50,7 @@ if ($creer_partie_reponse >  0) {
 
     echo "<h2> Une autre erreur est intervenu</h2>".'<br />';
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
-}
+}*/
 
 
 } else {

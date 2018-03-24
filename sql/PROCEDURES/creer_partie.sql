@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,ppseudo IN ZZW2090A.PARTIE.PSEUDO%TYPE,
+create or replace PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,ppseudo IN ZZW2090A.PARTIE.PSEUDO%TYPE,
                                          pid_collection OUT ZZW2090A.COLLECTION.ID_COLLECTION%TYPE,
                                          pid_partie OUT ZZW2090A.PARTIE.ID_PARTIE%TYPE,
                                          ptemps OUT ZZW2090A.PARTIE.TEMPS%TYPE,
@@ -9,9 +9,12 @@ CREATE OR REPLACE PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,
     check_exception EXCEPTION;
     foreign_key_exception EXCEPTION;
     blocage_experience EXCEPTION;
+    blocage_trop_perdu EXCEPTION;
+
   PRAGMA EXCEPTION_INIT(check_exception,-2290);
   PRAGMA EXCEPTION_INIT(foreign_key_exception,-2291);
   PRAGMA EXCEPTION_INIT(blocage_experience,-20014);
+  PRAGMA EXCEPTION_INIT(blocage_trop_perdu,-20013);
   ecode NUMBER;
   errm VARCHAR(255);
   BEGIN
@@ -39,26 +42,32 @@ CREATE OR REPLACE PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,
     pid_collection := vid_collection;
     ptemps := vtemps;
     COMMIT;
-
+    pretour := 0;
     EXCEPTION
     WHEN blocage_experience THEN
-    pretour := -1;
+    pretour := 1;
+    WHEN blocage_trop_perdu THEN
+    pretour := 2;
     WHEN NO_DATA_FOUND THEN
-    RAISE_APPLICATION_ERROR(-20020,'Ce niveau n''est pas présent dans la BD');
-    pretour := 0;
+    pretour := 3;
+    --RAISE_APPLICATION_ERROR(-20020,'Ce niveau n''est pas présent dans la BD');
     WHEN DUP_VAL_ON_INDEX THEN
-    RAISE_APPLICATION_ERROR(-20026,'Cette partie existe déjà ! ');
+    pretour := 4;
+    --RAISE_APPLICATION_ERROR(-20026,'Cette partie existe déjà ! ');
     WHEN check_exception THEN
-    RAISE_APPLICATION_ERROR(-20027,'Le statut doit être soit EC (en cours), soit G (gagné), soit P (perdu)');
+    --RAISE_APPLICATION_ERROR(-20027,'Le statut doit être soit EC (en cours), soit G (gagné), soit P (perdu)');
+    pretour := 5;
     WHEN foreign_key_exception THEN
     IF(SQLERRM  = '%fk_partie_pseudo%') THEN
-      RAISE_APPLICATION_ERROR(-20028,'La référence de ce pseudo n''existe pas');
+      pretour := 6;
+    --RAISE_APPLICATION_ERROR(-20028,'La référence de ce pseudo n''existe pas');
     ELSE
-      RAISE_APPLICATION_ERROR(-20024,'La référence de ce niveau n''existe pas');
+      pretour := 7;
+    --RAISE_APPLICATION_ERROR(-20024,'La référence de ce niveau n''existe pas');
     END IF;
     WHEN OTHERS  THEN
     ecode := SQLCODE;
     errm :=SQLERRM;
-    pretour := -3;
-    RAISE_APPLICATION_ERROR(ecode,errm);
+    pretour := 8;
+    --dbms_output.put_line(ecode || ' ' || errm);
   END creer_partie;

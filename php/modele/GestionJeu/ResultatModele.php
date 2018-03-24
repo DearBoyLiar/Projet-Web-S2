@@ -9,7 +9,7 @@
  * @return bool
  */
 function inserer_repond($resultat_reponse,$reponse,$id_logo,$id_partie,$connexion) {
-    $query = "begin creer_repond(:resultat_reponse,:reponse,:id_logo,:id_partie); end;";
+    $query = "begin ZZW2090A.creer_repond(:resultat_reponse,:reponse,:id_logo,:id_partie); end;";
 
     $stid = oci_parse($connexion, $query);
 
@@ -78,7 +78,7 @@ function update_partie($partie,$statut,$score,$pseudo,$niveau,$connexion) {
         $statut = 'P';
     }
 
-    $query = "begin update_partie(:id_partie,:statut,:score,:pseudo,:niveau); end;";
+    $query = "begin ZZW2090A.update_partie(:id_partie,:statut,:score,:pseudo,:niveau); end;";
 
     $stid = oci_parse($connexion, $query);
 
@@ -110,7 +110,7 @@ function update_partie($partie,$statut,$score,$pseudo,$niveau,$connexion) {
 function get_highscore($niveau,$mode,$connexion) {
 
     // Requête pour les highscore
-    $query = 'begin  recup_highscore(:niveau,:mode,:pseudos,:dates,:scores); end;';
+    $query = 'begin  ZZW2090A.recup_highscore(:niveau,:mode,:pseudos,:dates,:scores); end;';
 
     $stid = oci_parse($connexion, $query);
 

@@ -4,16 +4,6 @@ alter session set nls_timestamp_format = 'DD-MON-YYYY HH24:MI:SS';
 CREATE OR REPLACE TRIGGER trigger_blocage
   FOR INSERT ON ZZW2090A.PARTIE
 COMPOUND TRIGGER
-  BEFORE EACH ROW IS
-    vexperience ZZW2090A.UTILISATEUR.experience%TYPE;
-  BEGIN
-    SELECT EXPERIENCE INTO vexperience FROM ZZW2090A.UTILISATEUR WHERE PSEUDO = :NEW.PSEUDO;
-
-    IF :NEW.niveau > vexperience THEN
-      RAISE_APPLICATION_ERROR(-20014,'Ce niveau n''est pas accessible, vous n''avez pas l''exérience requise');
-    END IF;
-  END BEFORE EACH ROW;
-
   AFTER STATEMENT IS
     nb_partie_perdues_heure NUMBER;
     heure_last_partie_perdue NUMBER;

@@ -2,7 +2,7 @@
 
 // Création de la partie
 function creer_partie($niveau,$pseudo,$connexion) {
-    $query = "begin creer_partie(:niveau,:pseudo,:id_collection,:id_partie,:temps,:retour); end;";
+    $query = "begin ZZW2090A.creer_partie(:niveau,:pseudo,:id_collection,:id_partie,:temps,:retour); end;";
 
     $stid = oci_parse($connexion, $query);
 
@@ -13,6 +13,10 @@ function creer_partie($niveau,$pseudo,$connexion) {
     oci_bind_by_name($stid, ':id_partie', $id_partie,255);
     oci_bind_by_name($stid, ':temps', $temps,255);
     oci_bind_by_name($stid, ':retour', $retour,255);
+
+    var_dump($retour);
+    var_dump($id_partie);
+    var_dump($id_collection);
 
     if ( ! oci_execute($stid)){
         // Si le trigger sur l'expérience ou le celui du blocage de partie ne passe pas

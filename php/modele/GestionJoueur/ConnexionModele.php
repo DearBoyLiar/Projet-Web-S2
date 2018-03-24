@@ -6,7 +6,7 @@ function connexion($pseudo,$password,$connexion)
     // Taille du pseudo >= 5  et les deux mots de passe se correspondent
     if (isset($pseudo) and isset($password) and strlen($pseudo) > 4 and strlen($password) > 4)
     {
-        $query = "begin connexion(:pseudo,:password); end;";
+        $query = "begin ZZW2090A.connexion(:pseudo,:password); end;";
 
         // Hashage du mot de passe avant ajout dans la BD
         $password = hash("sha256",$password);

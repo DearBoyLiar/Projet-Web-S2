@@ -17,7 +17,7 @@ function inscrire($pseudo,$password,$confirmed_password,$connexion)
         $password = hash("sha256",$password);
 
         // Requête appelant la procédure
-        $query = 'begin inscription(:pseudo, :password); end;';
+        $query = 'begin ZZW2090A.inscription(:pseudo, :password); end;';
 
         // Prépare la requête
         $stid = oci_parse($connexion, $query);
