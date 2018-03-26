@@ -15,14 +15,16 @@ function creer_partie($niveau,$pseudo,$connexion) {
     oci_bind_by_name($stid, ':retour', $retour,255);
 
     oci_execute($stid);
-    oci_close($connexion);
 
-    if ($retour == 0) {
+    $e = oci_error($stid);echo $e['message'];
+    if ($retour == -10) {
+        oci_close($connexion);
         // Si aucun trigger ne se déclenche
         $_SESSION['id_partie'] = $id_partie; // récupération de l'id_partie
         $_SESSION['temps'] = $temps;
         return intval($id_collection);
     } else {
+        oci_close($connexion);
         // Si le trigger sur l'expérience ou le celui du blocage de partie ne passe pas
         return intval($retour);
     }

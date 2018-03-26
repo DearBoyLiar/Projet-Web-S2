@@ -42,7 +42,6 @@ if ($creer_partie_reponse >  0) {
 } elseif ($creer_partie_reponse == -2) {
     echo "<h2>Vous êtes bloqué pour 4 heures</h2>".'<br />';
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
-
 } else {
     echo "<h2> Une autre erreur est intervenu</h2>".'<br />';
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";

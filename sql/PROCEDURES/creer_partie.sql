@@ -37,6 +37,7 @@ create or replace PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,
     pid_collection := vid_collection;
     ptemps := vtemps;
     COMMIT;
+    pretour := -10;
     EXCEPTION
     WHEN NO_DATA_FOUND THEN
     pretour := 3;
