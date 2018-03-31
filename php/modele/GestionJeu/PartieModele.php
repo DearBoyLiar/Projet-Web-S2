@@ -17,7 +17,7 @@ function creer_partie($niveau,$pseudo,$connexion) {
     oci_execute($stid);
     oci_close($connexion);
 
-    if ($retour == 0) {
+    if ($retour == -10) {
         // Si aucun trigger ne se déclenche
         $_SESSION['id_partie'] = $id_partie; // récupération de l'id_partie
         $_SESSION['temps'] = $temps;
@@ -58,7 +58,7 @@ function recup_logo($collection,$connexion) {
 }
 
 function get_parties($pseudo,$niveau,$connexion) {
-    $query = "SELECT ID_PARTIE,DATE_PARTIE,STATUT,SCORE FROM ZZW2090A.PARTIE WHERE PSEUDO = '".$pseudo."' AND NIVEAU ='".$niveau."' ORDER BY ID_PARTIE DESC";
+    $query = "SELECT ID_PARTIE,DATE_PARTIE,STATUT,SCORE FROM ZZW2090A.PARTIE WHERE PSEUDO = '".$pseudo."' AND NIVEAU ='".$niveau."' ORDER BY DATE_PARTIE DESC";
 
     $stid = oci_parse($connexion, $query);
 

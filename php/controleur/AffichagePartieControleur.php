@@ -44,6 +44,7 @@ if ($creer_partie_reponse >  0) {
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
 
 } else {
+    var_dump($creer_partie_reponse);
     echo "<h2> Une autre erreur est intervenu</h2>".'<br />';
     echo "<a href='../vue/menu.php'><h3>Retourner au menu</h3></a>";
 }

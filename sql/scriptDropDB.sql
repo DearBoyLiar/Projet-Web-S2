@@ -11,6 +11,10 @@ drop procedure creer_partie;
 drop procedure creer_repond;
 drop procedure update_partie;
 drop procedure update_exp_utilisateur;
+drop procedure recup_highscore;
+
+drop trigger trigger_blocage;
+drop trigger trigger_niveau;
 
 drop sequence SEQ_COLLECTION_ID_COLLECTION;
 drop sequence SEQ_LOGO_ID_LOGO;

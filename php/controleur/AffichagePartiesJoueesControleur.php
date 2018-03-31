@@ -24,7 +24,6 @@ include ('../vue/affichage_parties_rejouees.php');
 
 $_SESSION['niveau'] = intval($_POST['niveau']); // récupère en session le niveau choisi
 
-
 // Récupération des parties pour ce niveau et le joueur connecté
 get_parties($_SESSION['pseudo'],$_SESSION['niveau'],$dbConn);
 

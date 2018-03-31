@@ -24,6 +24,7 @@ include('../modele/GestionJeu/PartieModele.php');
 include('../vue/affichage_logo.php');
 
 // Récupération des réponses_repondus et des resultat réponses pour la partie selectionnée
+var_dump($_POST['id_partie']);
 if (get_reponse_partie_choisie($_POST['id_partie'], $dbConn)) {
 
     foreach ($_SESSION['partie_choisie'] as $logo) {

@@ -7,6 +7,10 @@ CREATE OR REPLACE PROCEDURE update_partie(pid_partie IN ZZW2090A.PARTIE.ID_PARTI
   BEGIN
     UPDATE ZZW2090A.PARTIE SET STATUT=pstatut, SCORE = pscore WHERE ID_PARTIE=pid_partie;
 
+    IF pstatut='G' THEN
+        update_exp_utilisateur(ppseudo,pniveau);
+    END IF;
+
     DELETE FROM ZZW2090A.PARTIE WHERE STATUT='EC';
     COMMIT;
   EXCEPTION
