@@ -1,7 +1,7 @@
 CREATE OR REPLACE PROCEDURE creer_repond(presultat_reponse IN ZZW2090A.REPOND.RESULTAT_REPONSE%TYPE,
   preponse_repondue IN ZZW2090A.REPOND.REPONSE_REPONDUE%TYPE,
   pid_logo IN ZZW2090A.LOGO.ID_LOGO%TYPE,
-  pid_partie IN ZZW2090A.PARTIE.ID_PARTIE%TYPE ) IS
+  pid_partie IN ZZW2090A.PARTIE.ID_PARTIE%TYPE) IS
     check_exception EXCEPTION;
     foreign_key_exception EXCEPTION;
   PRAGMA EXCEPTION_INIT(check_exception,-2290);
@@ -14,6 +14,7 @@ CREATE OR REPLACE PROCEDURE creer_repond(presultat_reponse IN ZZW2090A.REPOND.RE
     VALUES (pid_logo,pid_partie,CURRENT_TIMESTAMP,presultat_reponse,preponse_repondue);
 
     COMMIT;
+
     EXCEPTION
     WHEN DUP_VAL_ON_INDEX THEN
     RAISE_APPLICATION_ERROR(-20018,'Vous avez déjà répondu dans cette partie à cette question ! ');
@@ -28,5 +29,4 @@ CREATE OR REPLACE PROCEDURE creer_repond(presultat_reponse IN ZZW2090A.REPOND.RE
     WHEN OTHERS  THEN
     ecode := SQLCODE;
     errm :=SQLERRM;
-    RAISE_APPLICATION_ERROR(ecode,errm);
   END creer_repond;

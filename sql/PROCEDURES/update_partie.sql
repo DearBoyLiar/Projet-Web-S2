@@ -11,7 +11,6 @@ CREATE OR REPLACE PROCEDURE update_partie(pid_partie IN ZZW2090A.PARTIE.ID_PARTI
         update_exp_utilisateur(ppseudo,pniveau);
     END IF;
 
-    DELETE FROM ZZW2090A.PARTIE WHERE STATUT='EC';
     COMMIT;
   EXCEPTION
     WHEN check_exception THEN

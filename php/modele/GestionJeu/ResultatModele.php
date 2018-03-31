@@ -19,12 +19,13 @@ function inserer_repond($resultat_reponse,$reponse,$id_logo,$id_partie,$connexio
     oci_bind_by_name($stid, ':id_logo', $id_logo,255);
     oci_bind_by_name($stid, ':id_partie', $id_partie,255);
 
-    if ( ! oci_execute($stid)){
-        // Si erreur
-        $e = oci_error($stid);
-        echo $e['message'];
+    if (!oci_execute($stid)) {
+        return false;
+    } else {
+        // Si tout se passe bien
+        return true;
     }
-    return true;
+
 }
 /**
  * Récupération du score minimum pour gagner la partie du niveau demandé
