@@ -1,16 +1,15 @@
-
-alter session set nls_timestamp_format = 'DD-MON-YYYY HH24:MI:SS';
-
-CREATE OR REPLACE TRIGGER trigger_blocage
+create or replace TRIGGER trigger_blocage
   FOR INSERT ON ZZW2090A.PARTIE
 COMPOUND TRIGGER
-  AFTER STATEMENT IS
+  BEFORE EACH ROW IS
+      mutating_exc EXCEPTION;
+    PRAGMA EXCEPTION_INIT(mutating_exc,-04091);
     nb_partie_perdues_heure NUMBER;
     heure_last_partie_perdue NUMBER;
   BEGIN
 
-    SELECT extract(hour from CAST(TO_CHAR(DATE_PARTIE,'DD-MON-YYYY HH24:MI:SS') as timestamp)) INTO heure_last_partie_perdue FROM ZZW2090A.PARTIE WHERE DATE_PARTIE >= (CURRENT_TIMESTAMP - interval '1' hour) AND ROWNUM =1 AND STATUT='P' ORDER BY DATE_PARTIE DESC;
-    SELECT COUNT(*) INTO nb_partie_perdues_heure FROM ZZW2090A.PARTIE WHERE DATE_PARTIE >= (CURRENT_TIMESTAMP - interval '1' hour) AND STATUT='P';
+    SELECT extract(hour from CAST(TO_CHAR(DATE_PARTIE,'DD-MON-YYYY HH24:MI:SS') as timestamp)) INTO heure_last_partie_perdue FROM ZZW2090A.PARTIE WHERE DATE_PARTIE >= (CURRENT_TIMESTAMP - interval '1' hour) AND ROWNUM =1 AND STATUT='P' AND PSEUDO=:NEW.PSEUDO ORDER BY DATE_PARTIE DESC;
+    SELECT COUNT(*) INTO nb_partie_perdues_heure FROM ZZW2090A.PARTIE WHERE DATE_PARTIE >= (CURRENT_TIMESTAMP - interval '1' hour) AND PSEUDO=:NEW.PSEUDO AND STATUT='P';
 
     IF nb_partie_perdues_heure >= 5 THEN
       IF (heure_last_partie_perdue = 20) THEN
@@ -35,5 +34,10 @@ COMPOUND TRIGGER
         END IF;
       END IF;
     END IF;
-  END AFTER STATEMENT ;
+    EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+    DBMS_OUTPUT.PUT_LINE('');
+    WHEN mutating_exc THEN
+    DBMS_OUTPUT.PUT_LINE('');
+  END BEFORE EACH ROW ;
 END;

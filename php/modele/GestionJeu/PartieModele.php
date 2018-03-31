@@ -23,6 +23,7 @@ function creer_partie($niveau,$pseudo,$connexion) {
         $_SESSION['temps'] = $temps;
         return intval($id_collection);
     } else {
+        oci_close($connexion);
         // Si le trigger sur l'expérience ou le celui du blocage de partie ne passe pas
         return intval($retour);
     }
