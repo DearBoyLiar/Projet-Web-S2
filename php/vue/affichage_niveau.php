@@ -11,7 +11,7 @@ function afficheNiveau($tab) {
 
     } else { // Joueur sohaite rejouer ses parties
         echo "<form method='post' action='../controleur/AffichagePartiesJoueesControleur.php'>";
-        echo"<h1>Choisissez le niveau pour lequel vous voulez voir vos parties jouées</h1>";
+        echo"<h1>Choisissez le niveau pour voir vos parties jouées sur ce dernier</h1>";
     }
     echo "<table>";
     foreach($tab as $niveau) {

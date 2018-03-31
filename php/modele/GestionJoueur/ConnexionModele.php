@@ -23,14 +23,11 @@ function connexion($pseudo,$password,$connexion)
         if ( ! oci_execute($stid)){
             // En cas de soucie sur la requête qui s'exécute mal
             oci_close($connexion);
+            echo "<h2>Impossible de vous connecter, car nous ne trouvons pas vos identifiants</h2>".'<br />';
             return false;
         } else {
             oci_close($connexion);
             if ($password == $true_password) {
-                // Si le mot de passe BD correspond à celui renseigné alors il est connecté
-                // session_start
-                session_start();
-                $_SESSION['pseudo'] = $pseudo;
                 return true;
             } else {
                 // Pas le bon mot de passe renseigné => renvoie à l'accueil

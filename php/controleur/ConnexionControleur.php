@@ -24,6 +24,7 @@ include ('../modele/GestionJoueur/ConnexionModele.php');
 // Récupère le message renvoyer par la fonction inscrire de la classe InscriptionModele
 if(connexion($_POST['pseudo'],$_POST['password'],$dbConn))
 {
+    session_start();
     $_SESSION['pseudo'] = $_POST['pseudo'];
     echo "<h2>Vous êtes connecté !</h2><br />
           <a href='../vue/menu.php'><h3>Rejoindre le menu</h3></a>";

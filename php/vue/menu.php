@@ -29,7 +29,7 @@ session_start();
 <div  class="accueil">
     <form method="post" action="../controleur/ChoixNiveauControleur.php">
         <button name="choix" value=0>Choisir votre niveau</button>
-        <br />
+        <br /><br /><br />
         <button name="choix" value=1>Voir vos parties jouées</button>
     </form>
 </div>
