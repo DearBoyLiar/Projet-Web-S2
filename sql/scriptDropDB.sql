@@ -15,6 +15,7 @@ drop procedure recup_highscore;
 
 drop trigger trigger_blocage;
 drop trigger trigger_niveau;
+drop trigger trigger_delete_ec;
 
 drop sequence SEQ_COLLECTION_ID_COLLECTION;
 drop sequence SEQ_LOGO_ID_LOGO;
