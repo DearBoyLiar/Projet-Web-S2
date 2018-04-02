@@ -5,7 +5,6 @@ create or replace PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,
                                          pretour OUT NUMBER) IS
   vtemps NUMBER;
   vid_partie ZZW2090A.PARTIE.ID_PARTIE%TYPE;
-  vid_collection ZZW2090A.COLLECTION.ID_COLLECTION%TYPE;
     check_exception EXCEPTION;
     foreign_key_exception EXCEPTION;
   PRAGMA EXCEPTION_INIT(check_exception,-2290);
@@ -31,10 +30,9 @@ create or replace PROCEDURE creer_partie(pniveau IN ZZW2090A.PARTIE.NIVEAU%TYPE,
 
     SELECT MAX(ID_PARTIE) INTO vid_partie FROM ZZW2090A.PARTIE;
 
-    SELECT ID_COLLECTION INTO vid_collection FROM ZZW2090A.NIVEAU WHERE NIVEAU=pniveau;
+    SELECT ID_COLLECTION INTO pid_collection FROM ZZW2090A.NIVEAU WHERE NIVEAU=pniveau;
 
     pid_partie := vid_partie;
-    pid_collection := vid_collection;
     ptemps := vtemps;
     COMMIT;
     pretour := -10;

@@ -9,7 +9,7 @@ function creer_partie($niveau,$pseudo,$connexion) {
     // On lie les marqueurs avec les variables
     oci_bind_by_name($stid, ':pseudo', $pseudo,255);
     oci_bind_by_name($stid, ':niveau', $niveau,255);
-    oci_bind_by_name($stid, ':id_collection', $id_collection,255);
+    oci_bind_by_name($stid, ':id_collection', $id_collection,-1);
     oci_bind_by_name($stid, ':id_partie', $id_partie,255);
     oci_bind_by_name($stid, ':temps', $temps,255);
     oci_bind_by_name($stid, ':retour', $retour,255);
@@ -18,6 +18,7 @@ function creer_partie($niveau,$pseudo,$connexion) {
     oci_close($connexion);
 
     if ($retour == -10) {
+        oci_close($connexion);
         // Si aucun trigger ne se déclenche
         $_SESSION['id_partie'] = $id_partie; // récupération de l'id_partie
         $_SESSION['temps'] = $temps;
